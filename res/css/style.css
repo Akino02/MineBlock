@@ -1,0 +1,409 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+body{
+  margin: 0px;
+}
+#buttons{
+  display: flex;
+  justify-content: space-between;
+}
+#change {
+  max-width: 25px;
+  width: 100%;
+  max-height: 25px;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+#toolbutton{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.multi{
+  max-width: 25px;
+  width: 100%;
+  max-height: 25px;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+#toolclose{
+  max-width: 25px;
+  width: 100%;
+  max-height: 25px;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  display: none;
+}
+#toolsbutton{
+  display: block;
+}
+#biome {
+  display: none;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+#overWorld {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+#cave {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+#nether {
+  margin-bottom: 15px;
+}
+#end {
+  margin-bottom: 15px;
+}
+#header {
+  /*max-height: 400px;  
+  height: 100%;*/
+  height: 450px;
+  text-align: center;
+  font-size: 30px;
+  /*background-image: url(../img/OverWorld.png);*/
+  background: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  color: white;
+}
+.name {
+  text-decoration: underline;
+}
+#wood {
+  max-width: 250px;
+  width: 100%;
+  /*width: 250px;*/
+  margin: 0 auto;
+  display: block;
+  cursor: crosshair;
+}
+#stone {
+  max-width: 250px;
+  width: 100%;
+  /*width: 250px;*/
+  margin: 0 auto;
+  display: none;
+  cursor: crosshair;
+}
+#coalore{
+  max-width: 250px;
+  width: 100%;
+  width: 250px;
+  margin: 0 auto;
+  display: none;
+  cursor: crosshair;
+}
+#ironore{
+  max-width: 250px;
+  width: 100%;
+  width: 250px;
+  margin: 0 auto;
+  display: none;
+  cursor: crosshair;
+}
+#woodgone {
+  max-width: 100px;
+  width: 100%;
+  margin-left: 15%;
+  display: none;
+  cursor: pointer;
+}
+#stonegone {
+  max-width: 100px;
+  width: 100%;
+  margin-left: 15%;
+  display: none;
+  cursor: pointer;
+}
+#hps {
+  max-height: 30px;
+  height: 100%;
+  max-width: 80px;
+  width: 100%;
+  margin: 0 auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+#hits {
+  text-align: center;
+  font-size: 25px;
+}
+#firstblock {
+  height: 70%;
+}
+#secondblock {
+  height: 22%;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+}
+#tools {          /*tohle špatně funguje*/
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  /*max-width: 50px;
+  width: 100%;*/
+  display: block;
+}
+#toolaxes {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+#woodaxe {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  display: none;
+}
+#stoneaxe {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  display: none;
+}
+#toolpickaxes {
+  display: flex;
+  flex-direction: column;
+}
+#woodpickaxe {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  display: none;
+}
+#stonepickaxe {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  display: none;
+}
+#command {
+  font-size: 30px;
+  display: none;
+}
+.names {
+  display: flex;
+  font-size: 25px;
+  border-bottom: 1px solid black;
+}
+
+/*backpack + Inventář + crafting*/
+#bname {
+  display: flex;
+  font-size: 25px;
+}
+#bclose {
+  float: right;
+  cursor: pointer;
+  margin-right: 15px;
+}
+#backpack {
+  max-height: 25px;
+  height: 100%;
+  max-width: 25px;
+  width: 100%;
+  cursor: pointer;
+}
+.backpack {
+  display: flex;
+  width: 100%;
+}
+#inventar {
+  display: none;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: 100%;
+  height: 100%;
+}
+#cname {
+  display: flex;
+  font-size: 25px;
+}
+#cclose {
+  float: right;
+  cursor: pointer;
+  margin-right: 15px;
+}
+#craftingtable {
+  max-height: 25px;
+  height: 100%;
+  max-width: 25px;
+  width: 100%;
+  cursor: pointer;
+}
+#crafting {
+  display: none;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: 100%;
+  height: 100%;
+}
+.row {
+  /*display: flex;*/
+  float: left;
+}
+.col {
+  float: left;
+  /*padding-right: 20px;*/
+}
+
+/*Inventář*/
+#pickedwood {
+  float: left;
+  max-width: 40px;
+  width: 100%;
+  margin-right: 20px;
+}
+#pickedstone {
+  float: left;
+  max-width: 40px;
+  width: 100%;
+  margin-right: 20px;
+}
+#craftedplank {
+  float: left;
+  max-width: 40px;
+  width: 100%;
+  margin-right: 20px;
+}
+#craftedstick {
+  float: left;
+  max-width: 40px;
+  width: 100%;
+  margin-right: 20px;
+}
+
+/*počet věcí v inventáři*/
+#wooddest {
+  font-size: 25px;
+  text-align: center;
+  border-right: 3px solid grey;
+  border-bottom: 3px solid grey;
+}
+#stonedest {
+  font-size: 25px;
+  text-align: center;
+  border-right: 3px solid grey;
+  border-bottom: 3px solid grey;
+}
+#plank {
+  font-size: 25px;
+  text-align: center;
+  border-right: 3px solid grey;
+  border-bottom: 3px solid grey;
+}
+#stick {
+  font-size: 25px;
+  text-align: center;
+  border-right: 3px solid grey;
+  border-bottom: 3px solid grey;
+}
+
+/*crafting*/
+#craftplank {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  /*padding-right: 15px;
+  padding-left: 15px;*/
+  cursor: pointer;
+}
+#craftstick {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  /*padding-right: 15px;
+  padding-left: 15px;*/
+  cursor: pointer;
+}
+#craftwoodaxe {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  /*padding-right: 15px;
+  padding-left: 15px;*/
+  cursor: pointer;
+}
+#craftstoneaxe {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  /*padding-right: 15px;
+  padding-left: 15px;*/
+  cursor: pointer;
+}
+#craftwoodpickaxe {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  /*padding-right: 15px;
+  padding-left: 15px;*/
+  cursor: pointer;
+}
+#craftstonepickaxe {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  /*padding-right: 15px;
+  padding-left: 15px;*/
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 365px) {
+  #tools {                      /*tohle špatně funguje*/
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    /*width: 50px;*/
+    display: flex;
+  }
+  #woodaxe {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  #stoneaxe {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  #woodpickaxe {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  #stonepickaxe {
+    max-width: 40px;
+    max-height: 40px;
+  }
+}
