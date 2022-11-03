@@ -177,7 +177,7 @@ toolclose.onclick = () => {
   toolbutton.style.display = "block";
   change.style.display = "block";
   
-  tools.style.left = "90%";
+  tools.style.left = "0%";
 
   if (wood.style.display == "block") {
     woodpickaxe.style.display = "none";

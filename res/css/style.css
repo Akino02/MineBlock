@@ -154,7 +154,7 @@ body{
 #tools {          /*tohle špatně funguje*/
   position: absolute;
   top: 5%;
-  left: 5%;
+  left: 0%;
   /*max-width: 50px;
   width: 100%;*/
   display: block;
@@ -386,7 +386,7 @@ body{
   #tools {                      /*tohle špatně funguje*/
     position: absolute;
     top: 5%;
-    left: 50%;
+    left: 0%;
     /*width: 50px;*/
     display: flex;
   }
