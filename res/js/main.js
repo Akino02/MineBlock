@@ -2,14 +2,20 @@ const header = document.getElementById("header");
 
 const wood = document.getElementById("wood");
 const stone = document.getElementById("stone");
+const coalore = document.getElementById("coalore");
+const ironore = document.getElementById("ironore");
 
 const woodgone = document.getElementById("woodgone");
 const stonegone = document.getElementById("stonegone");
+const coalgone = document.getElementById("coalgone");
+const irongone = document.getElementById("irongone");
 
 const hits = document.getElementById("hits");
 const counter = document.getElementById("counter");
 const wooddest = document.getElementById("wooddest");
 const stonedest = document.getElementById("stonedest");
+const coaldest = document.getElementById("coaldest");
+const irondest = document.getElementById("irondest");
 
 const plank = document.getElementById("plank");
 const craftplank = document.getElementById("craftplank");
@@ -64,6 +70,8 @@ let pickaxe = 0;
 let sword = 0;
 let woodznicen = 0;
 let stoneznicen = 0;
+let coalznicen = 0;
+let ironznicen = 0;
 
 // pro podmínky IF
 let craftingplank = 0;
@@ -71,6 +79,11 @@ let craftingstick = 0;
 
 let craftingtabletoolIF = 0;
 let furnacetoolIF = 0;
+
+let x = 0; // tady se ukládá náhodná proměná na proměnů bloků a později i mobů
+let stonex = 1;
+let coalx = 2;
+let ironx = 3;
 
 let woodaxetool = 0;
 let stoneaxetool = 0;
@@ -145,11 +158,119 @@ stone.onclick = () => {
           hp -= hp;
           hp += 25;
           hits.innerHTML = `${hp}/25`;
-          stone.style.display = "block";
+          //stone.style.display = "block";
           stonegone.style.display = "none";
           command.style.display = "none";
           stoneznicen += 1;
           stonedest.innerHTML = `${stoneznicen}`;
+          x = Math.floor(Math.random() * 3 + 1);
+          if (x == stonex) {
+            stone.style.display = "block";
+            coalore.style.display = "none";
+            ironore.style.display = "none";
+          }
+          if (x == coalx) {
+            stone.style.display = "none";
+            coalore.style.display = "block";
+            ironore.style.display = "none";
+          }
+          if (x == ironx) {
+            stone.style.display = "none";
+            coalore.style.display = "none";
+            ironore.style.display = "block";
+          }
+        }
+      };
+    }
+  }
+};
+coalore.onclick = () => {
+  if (woodpickaxetool == 1) {
+    hp -= pickaxe; //může být upgradnuto na proměnou let s větším damagem
+    hits.innerHTML = `${hp}/25`;
+    coalore.style.transition = ".1s";
+    coalore.style.transform = "scale(0.9)";
+    setTimeout(() => {
+      coalore.style.transition = ".1s";
+      coalore.style.transform = "scale(1)";
+    }, 100);
+    if (hp <= 0) {
+      coalore.style.display = "none";
+      coalgone.style.display = "block";
+      command.style.display = "block";
+      coalgone.onclick = () => {
+        if (hp <= 0) {
+          hp -= hp;
+          hp += 25;
+          hits.innerHTML = `${hp}/25`;
+          //coalore.style.display = "block";
+          coalgone.style.display = "none";
+          command.style.display = "none";
+          coalznicen += 1;
+          coaldest.innerHTML = `${coalznicen}`;
+          x = Math.floor(Math.random() * 3 + 1);
+          if (x == stonex) {
+            stone.style.display = "block";
+            coalore.style.display = "none";
+            ironore.style.display = "none";
+          }
+          if (x == coalx) {
+            stone.style.display = "none";
+            coalore.style.display = "block";
+            ironore.style.display = "none";
+          }
+          if (x == ironx) {
+            stone.style.display = "none";
+            coalore.style.display = "none";
+            ironore.style.display = "block";
+          }
+        }
+      };
+    }
+  }
+};
+ironore.onclick = () => {
+  if (woodpickaxetool == 1) {
+    hp -= pickaxe; //může být upgradnuto na proměnou let s větším damagem
+    hits.innerHTML = `${hp}/25`;
+    ironore.style.transition = ".1s";
+    ironore.style.transform = "scale(0.9)";
+    setTimeout(() => {
+      ironore.style.transition = ".1s";
+      ironore.style.transform = "scale(1)";
+    }, 100);
+    if (hp <= 0) {
+      ironore.style.display = "none";
+      irongone.style.display = "block";
+      command.style.display = "block";
+      irongone.onclick = () => {
+        if (hp <= 0) {
+          hp -= hp;
+          hp += 25;
+          hits.innerHTML = `${hp}/25`;
+          //ironore.style.display = "block";
+          irongone.style.display = "none";
+          command.style.display = "none";
+          if (stonepickaxetool == 1) {
+            ironznicen += 1;
+            irondest.innerHTML = `${ironznicen}`;
+          }
+          x = Math.floor(Math.random() * 3 + 1);
+          if (x == stonex) {
+            stone.style.display = "block";
+            coalore.style.display = "none";
+            ironore.style.display = "none";
+          }
+          if (x == coalx) {
+            stone.style.display = "none";
+            coalore.style.display = "block";
+            ironore.style.display = "none";
+          }
+          if (x == ironx) {
+            stone.style.display = "none";
+            coalore.style.display = "none";
+            ironore.style.display = "block";
+          }
         }
       };
     }
@@ -210,6 +331,26 @@ toolclose.onclick = () => {
       stonepickaxe.style.display = "block";
     }
   }
+  if (coalore.style.display == "block") {
+    woodaxe.style.display = "none";
+    stoneaxe.style.display = "none";
+    if (woodpickaxetool == 1) {
+      woodpickaxe.style.display = "block";
+    }
+    if (stonepickaxetool == 1) {
+      stonepickaxe.style.display = "block";
+    }
+  }
+  if (ironore.style.display == "block") {
+    woodaxe.style.display = "none";
+    stoneaxe.style.display = "none";
+    if (woodpickaxetool == 1) {
+      woodpickaxe.style.display = "block";
+    }
+    if (stonepickaxetool == 1) {
+      stonepickaxe.style.display = "block";
+    }
+  }
 
   toolclose.style.display = "none";
 };
@@ -232,6 +373,8 @@ overWorld.onclick = () => {
   firstblock.style.display = "block";
   wood.style.display = "block";
   stone.style.display = "none";
+  coalore.style.display = "none";
+  ironore.style.display = "none";
 
   header.style.backgroundImage =
     "url('https://cdn.wallpapersafari.com/93/96/oTLvsW.png')"; // snaha o změnu pozadí (../img/OverWorld.png)
@@ -241,7 +384,7 @@ overWorld.onclick = () => {
   hits.style.display = "block";
   if (craftingtabletoolIF == 1) {
     craftingtabletool.style.display = "block";
-    if (furnacetoolIF == 1){
+    if (furnacetoolIF == 1) {
       furnacetool.style.display = "block";
     }
   }
@@ -264,6 +407,8 @@ cave.onclick = () => {
   firstblock.style.display = "block";
   wood.style.display = "none";
   stone.style.display = "block";
+  coalore.style.display = "none";
+  ironore.style.display = "none";
 
   header.style.backgroundImage = "url('https://i.redd.it/l0pagi2byg391.png')"; // snaha o změnu pozadí //(../img/cave.png)
 
@@ -273,11 +418,27 @@ cave.onclick = () => {
 
   if (craftingtabletoolIF == 1) {
     craftingtabletool.style.display = "block";
-    if (furnacetoolIF == 1){
+    if (furnacetoolIF == 1) {
       furnacetool.style.display = "block";
     }
   }
   if (stone.style.display == "block") {
+    if (woodpickaxetool == 1) {
+      woodpickaxe.style.display = "block";
+    }
+    if (stonepickaxetool == 1) {
+      stonepickaxe.style.display = "block";
+    }
+  }
+  if (coalore.style.display == "block") {
+    if (woodpickaxetool == 1) {
+      woodpickaxe.style.display = "block";
+    }
+    if (stonepickaxetool == 1) {
+      stonepickaxe.style.display = "block";
+    }
+  }
+  if (ironore.style.display == "block") {
     if (woodpickaxetool == 1) {
       woodpickaxe.style.display = "block";
     }
