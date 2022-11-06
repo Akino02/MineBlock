@@ -2,7 +2,7 @@
 [Play](https://akino02.github.io/MineBlock/)
 #
 <h2>Update 1.7</h2>
-<p>Big issue I need to rewrite some id's</p>
+<p>Big issue I need to rewrite some id's and repair If's</p>
 <p>Craftinglist: ironingot,ironaxe,ironpickaxe</p>
 <h2>Update 1.6</h2>
 <p>New ores: Coal, Iron</p>
