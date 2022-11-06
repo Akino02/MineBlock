@@ -202,7 +202,6 @@ body {
 #toolaxes {
   display: flex;
   flex-direction: column;
-  /*margin-right: 20px;*/
 }
 #woodaxe {
   max-width: 50px;
@@ -212,6 +211,13 @@ body {
   display: none;
 }
 #stoneaxe {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  display: none;
+}
+#ironaxe{
   max-width: 50px;
   width: 100%;
   max-height: 50px;
@@ -230,6 +236,13 @@ body {
   display: none;
 }
 #stonepickaxe {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  display: none;
+}
+#ironpickaxe{
   max-width: 50px;
   width: 100%;
   max-height: 50px;
@@ -345,6 +358,12 @@ body {
   width: 100%;
   margin-right: 20px;
 }
+#craftedironingot{
+  float: left;
+  max-width: 40px;
+  width: 100%;
+  margin-right: 20px;
+}
 
 /*počet věcí v inventáři*/
 #wooddest {
@@ -383,6 +402,12 @@ body {
   border-right: 3px solid grey;
   border-bottom: 3px solid grey;
 }
+#ironingot{
+  font-size: 25px;
+  text-align: center;
+  border-right: 3px solid grey;
+  border-bottom: 3px solid grey;
+}
 
 /*crafting*/
 #craftplank {
@@ -394,6 +419,14 @@ body {
   cursor: pointer;
 }
 #craftstick {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  cursor: pointer;
+}
+#craftironingot{
   float: left;
   max-width: 70px;
   width: 100%;
@@ -433,6 +466,14 @@ body {
   padding: 0px 20px 20px 0px;
   cursor: pointer;
 }
+#craftironaxe{
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  cursor: pointer;
+}
 #craftwoodpickaxe {
   float: left;
   max-width: 70px;
@@ -442,6 +483,14 @@ body {
   cursor: pointer;
 }
 #craftstonepickaxe {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  cursor: pointer;
+}
+#craftironpickaxe{
   float: left;
   max-width: 70px;
   width: 100%;

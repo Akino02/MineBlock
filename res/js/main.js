@@ -15,7 +15,11 @@ const counter = document.getElementById("counter");
 const wooddest = document.getElementById("wooddest");
 const stonedest = document.getElementById("stonedest");
 const coaldest = document.getElementById("coaldest");
+
 const irondest = document.getElementById("irondest");
+const ironingot = document.getElementById("ironingot");
+const craftironingot = document.getElementById("craftironingot");
+
 
 const plank = document.getElementById("plank");
 const craftplank = document.getElementById("craftplank");
@@ -38,11 +42,15 @@ const woodaxe = document.getElementById("woodaxe");
 const craftwoodaxe = document.getElementById("craftwoodaxe");
 const stoneaxe = document.getElementById("stoneaxe");
 const craftstoneaxe = document.getElementById("craftstoneaxe");
+const ironaxe = document.getElementById("ironaxe");
+const craftironaxe = document.getElementById("craftironaxe");
 
 const woodpickaxe = document.getElementById("woodpickaxe");
 const craftwoodpickaxe = document.getElementById("craftwoodpickaxe");
 const stonepickaxe = document.getElementById("stonepickaxe");
 const craftstonepickaxe = document.getElementById("craftstonepickaxe");
+const ironpickaxe = document.getElementById("ironpickaxe");
+const craftironpickaxe = document.getElementById("craftironpickaxe");
 
 const command = document.getElementById("command");
 
@@ -76,6 +84,7 @@ let ironznicen = 0;
 // pro podmínky IF
 let craftingplank = 0;
 let craftingstick = 0;
+let craftingironingot = 0;
 
 let craftingtabletoolIF = 0;
 let furnacetoolIF = 0;
@@ -87,8 +96,12 @@ let ironx = 3;
 
 let woodaxetool = 0;
 let stoneaxetool = 0;
+let ironaxetool = 0;
+
 let woodpickaxetool = 0;
 let stonepickaxetool = 0;
+let ironpickaxetool = 0;
+
 
 window.onload = () => {
   header.style.backgroundImage =
@@ -293,11 +306,17 @@ toolbutton.onclick = () => {
   if (stoneaxetool == 1) {
     stoneaxe.style.display = "block";
   }
+  if (ironaxetool == 1) {
+    ironaxe.style.display = "block"
+  }
   if (woodpickaxetool == 1) {
     woodpickaxe.style.display = "block";
   }
   if (stonepickaxetool == 1) {
     stonepickaxe.style.display = "block";
+  }
+  if (ironpickaxetool == 1) {
+    ironpickaxe.style.display = "block"
   }
   toolclose.style.display = "block";
 };
@@ -313,42 +332,58 @@ toolclose.onclick = () => {
   if (wood.style.display == "block") {
     woodpickaxe.style.display = "none";
     stonepickaxe.style.display = "none";
+    ironpickaxe.style.display = "none";
     if (woodaxetool == 1) {
       woodaxe.style.display = "block";
     }
     if (stoneaxetool == 1) {
       stoneaxe.style.display = "block";
     }
+    if (ironaxetool == 1) {
+      ironaxe.style.display = "block"
+    }
   }
 
   if (stone.style.display == "block") {
     woodaxe.style.display = "none";
     stoneaxe.style.display = "none";
+    ironaxe.style.display = "none"
     if (woodpickaxetool == 1) {
       woodpickaxe.style.display = "block";
     }
     if (stonepickaxetool == 1) {
       stonepickaxe.style.display = "block";
+    }
+    if (ironpickaxetool == 1) {
+      ironpickaxe.style.display = "block"
     }
   }
   if (coalore.style.display == "block") {
     woodaxe.style.display = "none";
     stoneaxe.style.display = "none";
+    ironaxe.style.display = "none"
     if (woodpickaxetool == 1) {
       woodpickaxe.style.display = "block";
     }
     if (stonepickaxetool == 1) {
       stonepickaxe.style.display = "block";
+    }
+    if (ironpickaxetool == 1) {
+      ironpickaxe.style.display = "block"
     }
   }
   if (ironore.style.display == "block") {
     woodaxe.style.display = "none";
     stoneaxe.style.display = "none";
+    ironaxe.style.display = "none"
     if (woodpickaxetool == 1) {
       woodpickaxe.style.display = "block";
     }
     if (stonepickaxetool == 1) {
       stonepickaxe.style.display = "block";
+    }
+    if (ironpickaxetool == 1) {
+      ironpickaxe.style.display = "block"
     }
   }
 
@@ -363,8 +398,10 @@ change.onclick = () => {
   //tools
   woodpickaxe.style.display = "none";
   stonepickaxe.style.display = "none";
+  ironpickaxe.style.display = "none"
   woodaxe.style.display = "none";
   stoneaxe.style.display = "none";
+  ironaxe.style.display = "none"
   craftingtabletool.style.display = "none";
   furnacetool.style.display = "none";
 };
@@ -395,9 +432,13 @@ overWorld.onclick = () => {
     if (stoneaxetool == 1) {
       stoneaxe.style.display = "block";
     }
+    if (ironaxetool == 1) {
+      ironaxe.style.display = "block"
+    }
   }
   woodpickaxe.style.display = "none";
   stonepickaxe.style.display = "none";
+  ironpickaxe.style.display = "none"
 
   hp -= hp;
   hp += 25;
@@ -429,6 +470,9 @@ cave.onclick = () => {
     if (stonepickaxetool == 1) {
       stonepickaxe.style.display = "block";
     }
+    if (ironpickaxetool == 1) {
+      ironpickaxe.style.display = "block"
+    }
   }
   if (coalore.style.display == "block") {
     if (woodpickaxetool == 1) {
@@ -436,6 +480,9 @@ cave.onclick = () => {
     }
     if (stonepickaxetool == 1) {
       stonepickaxe.style.display = "block";
+    }
+    if (ironpickaxetool == 1) {
+      ironpickaxe.style.display = "block"
     }
   }
   if (ironore.style.display == "block") {
@@ -445,9 +492,13 @@ cave.onclick = () => {
     if (stonepickaxetool == 1) {
       stonepickaxe.style.display = "block";
     }
+    if (ironpickaxetool == 1) {
+      ironpickaxe.style.display = "block"
+    }
   }
   woodaxe.style.display = "none";
   stoneaxe.style.display = "none";
+  ironaxe.style.display = "none"
 
   hp -= hp;
   hp += 25;
@@ -500,11 +551,23 @@ craftfurnace.onclick = () => {
     craftfurnace.style.display = "none";
   }
 };
+craftironingot.onclick = () => {
+  if (furnacetoolIF == 1){
+    if (ironznicen >= 1) {
+      if (coalznicen >= 1){
+        ironznicen -= 1;
+        irondest.innerHTML = `${ironznicen}`
+        coalznicen -= 1;
+        coaldest.innerHTML = `${coalznicen}`
+        craftingironingot += 1;
+        ironingot.innerHTML = `${craftingironingot}`
+      }
+    }
+  }
+};
 //axes
 craftwoodaxe.onclick = () => {
-  if (craftingtabletoolIF == 1) {
-    if (craftingplank >= 3) {
-      if (craftingstick >= 2) {
+  if (craftingtabletoolIF == 1 && craftingplank >= 3 && craftingstick >= 2) {
         craftingstick -= 2;
         stick.innerHTML = `${craftingstick}`;
         craftingplank -= 3;
@@ -515,14 +578,10 @@ craftwoodaxe.onclick = () => {
           woodaxe.style.display = "block";
         }
         craftwoodaxe.style.display = "none";
-      }
-    }
   }
 };
 craftstoneaxe.onclick = () => {
-  if (craftingtabletoolIF == 1) {
-    if (stoneznicen >= 3) {
-      if (craftingstick >= 2) {
+  if (craftingtabletoolIF == 1 && stoneznicen >= 3 && craftingstick >= 2) {
         craftingstick -= 2;
         stick.innerHTML = `${craftingstick}`;
         stoneznicen -= 3;
@@ -534,15 +593,26 @@ craftstoneaxe.onclick = () => {
         }
         craftstoneaxe.style.display = "none";
         //toolpickaxes.style.display="block";
-      }
-    }
+  }
+};
+craftironaxe.onclick = () => {
+  if (craftingtabletoolIF == 1 && craftingironingot >= 3 && craftingstick >= 2) {
+        craftingstick -= 2;
+        stick.innerHTML = `${craftingstick}`;
+        craftingironingot -= 3;
+        ironingot.innerHTML = `${craftingironingot}`;
+        ironaxetool += 1;
+        axe += 1;
+        if (wood.style.display == "block") {
+          ironaxe.style.display = "block";
+        }
+        craftironaxe.style.display = "none";
+        //toolpickaxes.style.display="block";
   }
 };
 //pickaxes
 craftwoodpickaxe.onclick = () => {
-  if (craftingtabletoolIF == 1) {
-    if (craftingplank >= 3) {
-      if (craftingstick >= 2) {
+  if (craftingtabletoolIF == 1 && craftingplank >= 3 && craftingstick >= 2) {
         craftingstick -= 2;
         stick.innerHTML = `${craftingstick}`;
         craftingplank -= 3;
@@ -554,14 +624,10 @@ craftwoodpickaxe.onclick = () => {
         }
         craftwoodpickaxe.style.display = "none";
         //toolpickaxes.style.display="block";
-      }
-    }
   }
 };
 craftstonepickaxe.onclick = () => {
-  if (craftingtabletoolIF == 1) {
-    if (stoneznicen >= 3) {
-      if (craftingstick >= 2) {
+  if (craftingtabletoolIF == 1 && stoneznicen >= 3 && craftingstick >= 2) {
         craftingstick -= 2;
         stick.innerHTML = `${craftingstick}`;
         stoneznicen -= 3;
@@ -573,7 +639,20 @@ craftstonepickaxe.onclick = () => {
         }
         craftstonepickaxe.style.display = "none";
         //toolpickaxes.style.display="block";
-      }
-    }
+  }
+};
+craftironpickaxe.onclick = () => {
+  if (craftingtabletoolIF == 1 && craftingironingot >= 3 && craftingstick >= 2) {
+        craftingstick -= 2;
+        stick.innerHTML = `${craftingstick}`;
+        craftingironingot -= 3;
+        ironingot.innerHTML = `${craftingironingot}`;
+        ironpickaxetool += 1;
+        pickaxe += 1;
+        if (stone.style.display == "block") {
+          ironpickaxe.style.display = "block";
+        }
+        craftironpickaxe.style.display = "none";
+        //toolpickaxes.style.display="block";
   }
 };
