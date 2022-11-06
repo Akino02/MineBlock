@@ -193,7 +193,7 @@ body {
 #tools {
   /*tohle špatně funguje*/
   position: absolute;
-  top: 5%;
+  top: 8%;
   left: 0%;
   /*max-width: 50px;
   width: 100%;*/
@@ -458,7 +458,7 @@ body {
   #tools {
     /*tohle špatně funguje*/
     position: absolute;
-    top: 5%;
+    top: 8%;
     left: 0%;
     /*width: 50px;*/
     display: flex;
