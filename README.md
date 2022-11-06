@@ -23,4 +23,4 @@
 <p>Biomes view in up left corner</p>
 <h2>Update 1.0</h2>
 <p>You can mine and take wood</p>
-<p>Responziv on mobile phone</p>
+<p>Responsive on mobile phone</p>
