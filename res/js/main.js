@@ -1,4 +1,5 @@
 const header = document.getElementById("header");
+const day = document.getElementById("day");
 
 const wood = document.getElementById("wood");
 const stone = document.getElementById("stone");
@@ -101,11 +102,21 @@ let ironaxetool = 0;
 let woodpickaxetool = 0;
 let stonepickaxetool = 0;
 let ironpickaxetool = 0;
-
+//time
+const d = new Date();
+let hour = d.getHours();
 
 window.onload = () => {
-  header.style.backgroundImage =
+  if (hour >= 18 || hour <= 6){
+    header.style.backgroundImage =
+    "url('https://wallpaperaccess.com/full/2984716.png')";
+    day.style.color = "white";
+    day.style.backgroundColor = "#5A5A5A";
+  }
+  else{
+    header.style.backgroundImage =
     "url('https://cdn.wallpapersafari.com/93/96/oTLvsW.png')";
+  }
 };
 //responzivita
 bname.onclick = () => {
@@ -413,9 +424,14 @@ overWorld.onclick = () => {
   coalore.style.display = "none";
   ironore.style.display = "none";
 
-  header.style.backgroundImage =
-    "url('https://cdn.wallpapersafari.com/93/96/oTLvsW.png')"; // snaha o změnu pozadí (../img/OverWorld.png)
-
+  if (hour >= 18 || hour <= 6){
+    header.style.backgroundImage =
+    "url('https://wallpaperaccess.com/full/2984716.png')";
+  }
+  else{
+    header.style.backgroundImage =
+    "url('https://cdn.wallpapersafari.com/93/96/oTLvsW.png')";
+  }
   secondblock.style.display = "flex";
 
   hits.style.display = "block";
@@ -552,17 +568,13 @@ craftfurnace.onclick = () => {
   }
 };
 craftironingot.onclick = () => {
-  if (furnacetoolIF == 1){
-    if (ironznicen >= 1) {
-      if (coalznicen >= 1){
+  if (furnacetoolIF == 1 && ironznicen >= 1 && coalznicen >= 1){
         ironznicen -= 1;
         irondest.innerHTML = `${ironznicen}`
         coalznicen -= 1;
         coaldest.innerHTML = `${coalznicen}`
         craftingironingot += 1;
         ironingot.innerHTML = `${craftingironingot}`
-      }
-    }
   }
 };
 //axes
