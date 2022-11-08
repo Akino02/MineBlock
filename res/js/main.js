@@ -106,12 +106,14 @@ let ironpickaxetool = 0;
 const d = new Date();
 let hour = d.getHours();
 
+
 window.onload = () => {
   if (hour >= 18 || hour <= 6){
     header.style.backgroundImage =
     "url('https://wallpaperaccess.com/full/2984716.png')";
     day.style.color = "white";
     day.style.backgroundColor = "#5A5A5A";
+    document.body.style.backgroundColor = "#5A5A5A"
   }
   else{
     header.style.backgroundImage =
