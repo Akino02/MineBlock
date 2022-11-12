@@ -1,6 +1,9 @@
 # MineBlock
 [Play](https://akino02.github.io/MineBlock/)
 #
+<h2>Update 1.8</h2>
+<p>Save system</p>
+<p>Craftinglist: diaaxe,diapickaxe</p>
 <h2>Update 1.7</h2>
 <p>Big issue I need to rewrite some id's and repair If</p>
 <p>Craftinglist: ironingot,ironaxe,ironpickaxe</p>
