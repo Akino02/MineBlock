@@ -25,6 +25,8 @@ ul{
   margin: 0;
   padding: 0;
   list-style-type: none;
+  width: 10%;
+  margin: 0 auto;
 }
 li{
   margin-top: 20px;
