@@ -5,6 +5,47 @@
 }
 body {
   margin: 0px;
+  background-image: url(../img/menubackground.png);
+  background-size: cover;
+}
+#setting{
+  font-size: 35px;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+#menuofgame{
+  width: 100%;
+  text-align: center;
+}
+.namegame{
+  font-size: 30px;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+li{
+  margin-top: 20px;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  cursor: pointer;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+.by{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+#game{
+  display: none;
 }
 #buttons {
   display: flex;

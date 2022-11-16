@@ -1,4 +1,9 @@
 const header = document.getElementById("header");
+const menuofgame = document.getElementById("menuofgame");
+const game = document.getElementById("game");
+const play = document.getElementById("play");
+const settingb = document.getElementById("settingb");
+const setting = document.getElementById("setting");
 
 const wood = document.getElementById("wood");
 const stone = document.getElementById("stone");
@@ -124,6 +129,9 @@ window.onload = () => {
     header.style.backgroundImage =
       "url('https://cdn.wallpapersafari.com/93/96/oTLvsW.png')";
   }
+  // menuhry
+  
+
   // save system
   /*if (woodznicen >= 0) {
   setInterval(() => {
@@ -235,6 +243,16 @@ window.onload = () => {
   }
   //save pickaxe last
 };
+play.onclick = () => {
+  menuofgame.style.display ="none";
+  game.style.display = "block";
+  document.body.style.backgroundImage = "none"
+}
+settingb.onclick = () => {
+  setting.style.display ="block";
+  menuofgame.style.display = "none";
+  game.style.display = "none";
+}
 //responzivita
 bname.onclick = () => {
   inventar.style.display = "block";
