@@ -13,10 +13,12 @@ body {
   width: 100%;
   text-align: center;
   display: none;
+  color: white;
 }
 #menuofgame{
   width: 100%;
   text-align: center;
+  color: white;
 }
 .namegame{
   font-size: 30px;

@@ -253,6 +253,10 @@ settingb.onclick = () => {
   menuofgame.style.display = "none";
   game.style.display = "none";
 }
+setting.onclick = () => {
+  localStorage.clear();
+  location.reload()
+}
 //responzivita
 bname.onclick = () => {
   inventar.style.display = "block";
