@@ -247,6 +247,7 @@ play.onclick = () => {
   menuofgame.style.display ="none";
   game.style.display = "block";
   document.body.style.backgroundImage = "none"
+  wood.style.display = "block";
 }
 settingb.onclick = () => {
   setting.style.display ="block";
