@@ -107,7 +107,7 @@ const secondblock = document.getElementById("secondblock");
 let hp = 25;
 let axe = 1;
 let pickaxe = 0;
-let sword = 0;
+let sword = 1;
 
 let kills = 0;
 let woodznicen = 0;
