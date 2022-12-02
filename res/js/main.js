@@ -5,26 +5,37 @@ const play = document.getElementById("play");
 const settingb = document.getElementById("settingb");
 const setting = document.getElementById("setting");
 
+//firstblock
 const wood = document.getElementById("wood");
 const stone = document.getElementById("stone");
 const coalore = document.getElementById("coalore");
 const ironore = document.getElementById("ironore");
 const diaore = document.getElementById("diaore");
 
+//secondblock
+const attack = document.getElementById("attack");
+const startfight = document.getElementById("startfight");
 const woodgone = document.getElementById("woodgone");
 const stonegone = document.getElementById("stonegone");
 const coalgone = document.getElementById("coalgone");
 const irongone = document.getElementById("irongone");
 const diagone = document.getElementById("diagone");
 
+const player = document.getElementById("player");
+const enemy = document.getElementById("enemy");
+
+//započítávání čísel
 const hits = document.getElementById("hits");
+const lomitko = document.getElementById("lomitko");
+const maxhits = document.getElementById("maxhits");
 const counter = document.getElementById("counter");
+//zničené óréčka
 const wooddest = document.getElementById("wooddest");
 const stonedest = document.getElementById("stonedest");
 const coaldest = document.getElementById("coaldest");
 const diadest = document.getElementById("diadest");
-
 const irondest = document.getElementById("irondest");
+//crafting+item
 const ironingot = document.getElementById("ironingot");
 const craftironingot = document.getElementById("craftironingot");
 
@@ -34,9 +45,7 @@ const craftplank = document.getElementById("craftplank");
 const stick = document.getElementById("stick");
 const craftstick = document.getElementById("craftstick");
 
-//const toolaxes = document.getElementById("toolaxes");
-//const toolpickaxes = document.getElementById("toolpickaxes");
-
+//toolsbutton
 const tools = document.getElementById("tools");
 const toolsbutton = document.getElementById("toolsbutton");
 
@@ -44,7 +53,16 @@ const craftingtabletool = document.getElementById("craftingtabletool");
 const craftcraftingtable = document.getElementById("craftcraftingtable");
 const furnacetool = document.getElementById("furnacetool");
 const craftfurnace = document.getElementById("craftfurnace");
-
+//crafting swords
+const woodsword = document.getElementById("woodsword");
+const craftwoodsword = document.getElementById("craftwoodsword");
+const stonesword = document.getElementById("stonesword");
+const craftstonesword = document.getElementById("craftstonesword");
+const ironsword = document.getElementById("ironsword");
+const craftironsword = document.getElementById("craftironsword");
+const diasword = document.getElementById("diasword");
+const craftdiasword = document.getElementById("craftdiasword");
+//crafting tools+tool (axe)
 const woodaxe = document.getElementById("woodaxe");
 const craftwoodaxe = document.getElementById("craftwoodaxe");
 const stoneaxe = document.getElementById("stoneaxe");
@@ -53,7 +71,7 @@ const ironaxe = document.getElementById("ironaxe");
 const craftironaxe = document.getElementById("craftironaxe");
 const diaaxe = document.getElementById("diaaxe");
 const craftdiaaxe = document.getElementById("craftdiaaxe");
-
+//crafting tools+tool (pickaxe)
 const woodpickaxe = document.getElementById("woodpickaxe");
 const craftwoodpickaxe = document.getElementById("craftwoodpickaxe");
 const stonepickaxe = document.getElementById("stonepickaxe");
@@ -62,7 +80,7 @@ const ironpickaxe = document.getElementById("ironpickaxe");
 const craftironpickaxe = document.getElementById("craftironpickaxe");
 const diapickaxe = document.getElementById("diapickaxe");
 const craftdiapickaxe = document.getElementById("craftdiapickaxe");
-
+//příkaz pro pick
 const command = document.getElementById("command");
 
 const toolbutton = document.getElementById("toolbutton");
@@ -70,15 +88,18 @@ const toolclose = document.getElementById("toolclose");
 const change = document.getElementById("change");
 const biome = document.getElementById("biome");
 
-const bname = document.getElementById("bname");
+const playerhp = document.getElementById("playerhp");
+const enemyhp = document.getElementById("enemyhp");
+const bn = document.getElementById("bn");
 const inventar = document.getElementById("inventar");
 const bclose = document.getElementById("bclose");
-const cname = document.getElementById("cname");
+const cn = document.getElementById("cn");
 const crafting = document.getElementById("crafting");
 const cclose = document.getElementById("cclose");
 
 const overWorld = document.getElementById("overWorld");
 const cave = document.getElementById("cave");
+const dungeon = document.getElementById("dungeon");
 
 const firstblock = document.getElementById("firstblock");
 const secondblock = document.getElementById("secondblock");
@@ -87,6 +108,8 @@ let hp = 25;
 let axe = 1;
 let pickaxe = 0;
 let sword = 0;
+
+let kills = 0;
 let woodznicen = 0;
 let stoneznicen = 0;
 let coalznicen = 0;
@@ -101,11 +124,51 @@ let craftingironingot = 0;
 let craftingtabletoolIF = 0;
 let furnacetoolIF = 0;
 
-let x = 0; // tady se ukládá náhodná proměná na proměnů bloků a později i mobů
+// tady se ukládá náhodná proměná na proměnu bloků a později i mobů
+let x = 0;
+const randomnumber = () => {
+  if (localStorage.getItem("woodpickaxec") == 1) {
+    x = Math.floor(Math.random() * 2 + 1);
+  }
+  if (localStorage.getItem("stonepickaxec") == 1) {
+    x = Math.floor(Math.random() * 3 + 1);
+  }
+  if (localStorage.getItem("ironpickaxec") == 1) {
+    x = Math.floor(Math.random() * 4 + 1);
+  }
+  /*else{
+  x = Math.floor(Math.random() * 2 + 1);
+}*/
+};
+
+//damage od enemy
+let zdmg = 3;
+let enemydmg;
+
+function enemydmgg() {
+  enemydmg = setInterval(() => {
+    if (enemy.style.display == "block") {
+      hits.innerHTML -= zdmg;
+      player.style.transition = ".2s";
+      player.style.transform = "scale(0.8)";
+      setTimeout(() => {
+        player.style.transition = ".2s";
+        player.style.transform = "scale(1)";
+      }, 100);
+    }
+  }, 3000);
+}
+
 let stonex = 1;
 let coalx = 2;
 let ironx = 3;
+let goldx = 5;
 let diax = 4;
+
+let woodswordtool = 0;
+let stoneswordtool = 0;
+let ironswordtool = 0;
+let diaswordtool = 0;
 
 let woodaxetool = 0;
 let stoneaxetool = 0;
@@ -120,7 +183,7 @@ let diapickaxetool = 0;
 const d = new Date();
 let hour = d.getHours();
 window.onload = () => {
-  if (hour >= 18 || hour <= 6) {
+  if (hour >= 18 || hour <= 7) {
     header.style.backgroundImage =
       "url('https://wallpaperaccess.com/full/2984716.png')";
     document.body.style.backgroundColor = "#5A5A5A";
@@ -129,44 +192,21 @@ window.onload = () => {
     header.style.backgroundImage =
       "url('https://cdn.wallpapersafari.com/93/96/oTLvsW.png')";
   }
-  // menuhry
-  
-
-  // save system
-  /*if (woodznicen >= 0) {
-  setInterval(() => {
-    localStorage.setItem('woodc',woodznicen);
-  }, 100)
-}*/ // v tom to příkaze se woodznicen uloží lokálně do woodc
-  /*setInterval(() => {
-  localStorage.setItem('woodc',woodznicen);
-  localStorage.setItem('plankc', craftingplank);
-  localStorage.setItem('stickc', craftingstick);
-  localStorage.setItem('stonec', stoneznicen);
-  localStorage.setItem('coalc', coalznicen);
-  localStorage.setItem('ironorec', ironznicen);
-  localStorage.setItem('ironingotc', craftingironingot);
-  localStorage.setItem('diac', diaznicen);
-}, 100)*/
-  /*localStorage.setItem("axecd", axe);
-  localStorage.setItem("pickaxecd", pickaxe);*/
   if (localStorage.getItem("woodc") > 0) {
     woodznicen = parseInt(localStorage.getItem("woodc", woodznicen));
-    wooddest.innerHTML = `${woodznicen}`; // z woodznicen do wooddest aby to bylo vidět pro uživatele
+    wooddest.innerHTML = `${woodznicen}`;
   }
   if (localStorage.getItem("plankc") > 0) {
     craftingplank = parseInt(localStorage.getItem("plankc", craftingplank));
-    /*craftingplank = localStorage.getItem("plankc");*/
-    plank.innerHTML = `${craftingplank}`; //upravit přičítání
+
+    plank.innerHTML = `${craftingplank}`;
   }
   if (localStorage.getItem("stickc") > 0) {
     craftingstick = parseInt(localStorage.getItem("stickc", craftingstick));
-    /*craftingstick = localStorage.getItem("stickc")*/
-    stick.innerHTML = `${craftingstick}`; //upravit přičítání
+    stick.innerHTML = `${craftingstick}`;
   }
   if (localStorage.getItem("stonec") > 0) {
     stoneznicen = parseInt(localStorage.getItem("stonec", stoneznicen));
-    /*stoneznicen = localStorage.getItem("stonec")*/
     stonedest.innerHTML = `${stoneznicen}`;
   }
   if (localStorage.getItem("coalc") > 0) {
@@ -194,6 +234,30 @@ window.onload = () => {
   if (localStorage.getItem("furnacec") == 1) {
     furnacetool.style.display = "block";
     craftfurnace.style.display = "none";
+  }
+  if (localStorage.getItem("woodswordc") == 1) {
+    if (player.style.display == "block") {
+      woodsword.style.display = "block";
+    }
+    craftwoodsword.style.display = "none";
+  }
+  if (localStorage.getItem("stoneswordc") == 1) {
+    if (player.style.display == "block") {
+      stonesword.style.display = "block";
+    }
+    craftstonesword.style.display = "none";
+  }
+  if (localStorage.getItem("ironswordc") == 1) {
+    if (player.style.display == "block") {
+      ironsword.style.display = "block";
+    }
+    craftironsword.style.display = "none";
+  }
+  if (localStorage.getItem("diaswordc") == 1) {
+    if (player.style.display == "block") {
+      diasword.style.display = "block";
+    }
+    craftdiasword.style.display = "none";
   }
   if (localStorage.getItem("woodaxec") == 1) {
     woodaxe.style.display = "block";
@@ -235,6 +299,9 @@ window.onload = () => {
     }
     craftdiapickaxe.style.display = "none";
   }
+  if (localStorage.getItem("swordcd") > 0) {
+    sword = parseInt(localStorage.getItem("swordcd", sword));
+  }
   if (localStorage.getItem("axecd") > 1) {
     axe = parseInt(localStorage.getItem("axecd", axe));
   }
@@ -244,26 +311,26 @@ window.onload = () => {
   //save pickaxe last
 };
 play.onclick = () => {
-  menuofgame.style.display ="none";
+  menuofgame.style.display = "none";
   game.style.display = "block";
-  document.body.style.backgroundImage = "none"
+  document.body.style.backgroundImage = "none";
   wood.style.display = "block";
-}
+};
 settingb.onclick = () => {
-  setting.style.display ="block";
+  setting.style.display = "block";
   menuofgame.style.display = "none";
   game.style.display = "none";
-}
+};
 setting.onclick = () => {
   localStorage.clear();
-  location.reload()
-}
+  location.reload();
+};
 //responzivita
-bname.onclick = () => {
+bn.onclick = () => {
   inventar.style.display = "block";
   //crafting.style.display="none"
 };
-cname.onclick = () => {
+cn.onclick = () => {
   //inventar.style.display="none"
   crafting.style.display = "block";
 };
@@ -275,31 +342,96 @@ cclose.onclick = () => {
 };
 
 //předměty na klikání
+attack.onclick = () => {
+  maxhits.innerHTML -= sword;
+  enemy.style.transition = ".2s";
+  enemy.style.transform = "scale(0.8)";
+  setTimeout(() => {
+    enemy.style.transition = ".2s";
+    enemy.style.transform = "scale(1)";
+  }, 100);
+  if (maxhits.innerHTML <= 0) {
+    clearInterval(enemydmg);
+    setTimeout(() => {
+      enemy.style.transition = ".3s";
+      enemy.style.transform = "rotate(90deg)";
+    }, 100);
+    attack.style.display = "none";
+    kills += 1;
+    localStorage.setItem("killsc", kills);
+    setTimeout(() => {
+      enemy.style.transition = ".1s";
+      enemy.style.transform = "rotate(0deg)";
+      enemy.style.display = "none";
+      attack.style.display = "none";
+      hits.innerHTML = 20;
+      maxhits.innerHTML = 20;
+      maxhits.style.display = "none";
+      startfight.style.display = "block";
+      enemyhp.style.display = "none";
+      if (player.style.display == "none" && enemy.style.display == "none") {
+        clearInterval(enemydmg);
+        enemy.style.display = "none";
+        attack.style.display = "none";
+        startfight.style.display = "none";
+        maxhits.innerHTML = 25;
+      }
+    }, 3000);
+  } else if (hits.innerHTML <= 0) {
+    setTimeout(() => {
+      clearInterval(enemydmg);
+      player.style.transition = ".3s";
+      player.style.transform = "rotate(-90deg)";
+    }, 100);
+    setTimeout(() => {
+      enemy.style.transition = ".1s";
+      enemy.style.transform = "rotate(0deg)";
+      enemy.style.display = "none";
+      attack.style.display = "none";
+      hits.innerHTML = 20;
+      maxhits.innerHTML = 20;
+      maxhits.style.display = "none";
+      startfight.style.display = "block";
+      enemyhp.style.display = "none";
+      if (player.style.display == "none" && enemy.style.display == "none"){
+        clearInterval(enemydmg);
+        enemy.style.display = "none";
+        player.style.display = "none";
+        attack.style.display = "none";
+        startfight.style.display = "none";
+        maxhits.innerHTML = 25;
+      }
+    }, 3000);
+  }
+};
+startfight.onclick = () => {
+  enemydmgg();
+  startfight.style.display = "none";
+  enemy.style.display = "block";
+  attack.style.display = "block";
+  maxhits.style.display = "block";
+  enemyhp.style.display = "block";
+};
 wood.onclick = () => {
-  hp -= axe;
-  hits.innerHTML = `${hp}/25`;
+  hits.innerHTML -= axe;
   wood.style.transition = ".1s";
   wood.style.transform = "scale(0.9)";
   setTimeout(() => {
     wood.style.transition = ".1s";
     wood.style.transform = "scale(1)";
   }, 100);
-  if (hp <= 0) {
+  if (hits.innerHTML <= 0) {
     wood.style.display = "none";
     woodgone.style.display = "block";
     command.style.display = "block";
     woodgone.onclick = () => {
-      if (hp <= 0) {
-        hp -= hp;
-        hp += 25;
-        hits.innerHTML = `${hp}/25`;
+      if (hits.innerHTML <= 0) {
+        hits.innerHTML = hp;
         wood.style.display = "block";
         woodgone.style.display = "none";
         command.style.display = "none";
-        //save uprava
         woodznicen += 1;
         localStorage.setItem("woodc", woodznicen);
-        /*woodznicen ++;*/
         wooddest.innerHTML = `${woodznicen}`;
       }
     };
@@ -308,29 +440,26 @@ wood.onclick = () => {
 
 stone.onclick = () => {
   if (woodpickaxetool == 1 || localStorage.getItem("woodpickaxec") == 1) {
-    hp -= pickaxe; //může být upgradnuto na proměnou let s větším damagem
-    hits.innerHTML = `${hp}/25`;
+    hits.innerHTML -= pickaxe;
     stone.style.transition = ".1s";
     stone.style.transform = "scale(0.9)";
     setTimeout(() => {
       stone.style.transition = ".1s";
       stone.style.transform = "scale(1)";
     }, 100);
-    if (hp <= 0) {
+    if (hits.innerHTML <= 0) {
       stone.style.display = "none";
       stonegone.style.display = "block";
       command.style.display = "block";
       stonegone.onclick = () => {
-        if (hp <= 0) {
-          hp -= hp;
-          hp += 25;
-          hits.innerHTML = `${hp}/25`;
+        if (hits.innerHTML <= 0) {
+          hits.innerHTML = hp;
           stonegone.style.display = "none";
           command.style.display = "none";
           stoneznicen += 1;
           localStorage.setItem("stonec", stoneznicen);
           stonedest.innerHTML = `${stoneznicen}`;
-          x = Math.floor(Math.random() * 4 + 1);
+          randomnumber();
           if (x == stonex) {
             stone.style.display = "block";
             coalore.style.display = "none";
@@ -362,30 +491,27 @@ stone.onclick = () => {
 };
 coalore.onclick = () => {
   if (woodpickaxetool == 1 || localStorage.getItem("woodpickaxec") == 1) {
-    hp -= pickaxe; //může být upgradnuto na proměnou let s větším damagem
-    hits.innerHTML = `${hp}/25`;
+    hits.innerHTML -= pickaxe;
     coalore.style.transition = ".1s";
     coalore.style.transform = "scale(0.9)";
     setTimeout(() => {
       coalore.style.transition = ".1s";
       coalore.style.transform = "scale(1)";
     }, 100);
-    if (hp <= 0) {
+    if (hits.innerHTML <= 0) {
       coalore.style.display = "none";
       coalgone.style.display = "block";
       command.style.display = "block";
       coalgone.onclick = () => {
-        if (hp <= 0) {
-          hp -= hp;
-          hp += 25;
-          hits.innerHTML = `${hp}/25`;
+        if (hits.innerHTML <= 0) {
+          hits.innerHTML = hp;
           //coalore.style.display = "block";
           coalgone.style.display = "none";
           command.style.display = "none";
           coalznicen += 1;
           localStorage.setItem("coalc", coalznicen);
           coaldest.innerHTML = `${coalznicen}`;
-          x = Math.floor(Math.random() * 4 + 1);
+          randomnumber();
           if (x == stonex) {
             stone.style.display = "block";
             coalore.style.display = "none";
@@ -417,24 +543,20 @@ coalore.onclick = () => {
 };
 ironore.onclick = () => {
   if (woodpickaxetool == 1 || localStorage.getItem("woodpickaxec") == 1) {
-    hp -= pickaxe; //může být upgradnuto na proměnou let s větším damagem
-    hits.innerHTML = `${hp}/25`;
+    hits.innerHTML -= pickaxe;
     ironore.style.transition = ".1s";
     ironore.style.transform = "scale(0.9)";
     setTimeout(() => {
       ironore.style.transition = ".1s";
       ironore.style.transform = "scale(1)";
     }, 100);
-    if (hp <= 0) {
+    if (hits.innerHTML <= 0) {
       ironore.style.display = "none";
       irongone.style.display = "block";
       command.style.display = "block";
       irongone.onclick = () => {
-        if (hp <= 0) {
-          hp -= hp;
-          hp += 25;
-          hits.innerHTML = `${hp}/25`;
-          //ironore.style.display = "block";
+        if (hits.innerHTML <= 0) {
+          hits.innerHTML = hp;
           irongone.style.display = "none";
           command.style.display = "none";
           if (
@@ -445,7 +567,7 @@ ironore.onclick = () => {
             localStorage.setItem("ironorec", ironznicen);
             irondest.innerHTML = `${ironznicen}`;
           }
-          x = Math.floor(Math.random() * 4 + 1);
+          randomnumber();
           if (x == stonex) {
             stone.style.display = "block";
             coalore.style.display = "none";
@@ -477,23 +599,20 @@ ironore.onclick = () => {
 };
 diaore.onclick = () => {
   if (woodpickaxetool == 1 || localStorage.getItem("woodpickaxec") == 1) {
-    hp -= pickaxe; //může být upgradnuto na proměnou let s větším damagem
-    hits.innerHTML = `${hp}/25`;
+    hits.innerHTML -= pickaxe;
     diaore.style.transition = ".1s";
     diaore.style.transform = "scale(0.9)";
     setTimeout(() => {
       diaore.style.transition = ".1s";
       diaore.style.transform = "scale(1)";
     }, 100);
-    if (hp <= 0) {
+    if (hits.innerHTML <= 0) {
       diaore.style.display = "none";
       diagone.style.display = "block";
       command.style.display = "block";
       diagone.onclick = () => {
-        if (hp <= 0) {
-          hp -= hp;
-          hp += 25;
-          hits.innerHTML = `${hp}/25`;
+        if (hits.innerHTML <= 0) {
+          hits.innerHTML = hp;
           //ironore.style.display = "block";
           diagone.style.display = "none";
           command.style.display = "none";
@@ -505,7 +624,7 @@ diaore.onclick = () => {
             localStorage.setItem("diaorec", diaznicen);
             diadest.innerHTML = `${diaznicen}`;
           }
-          x = Math.floor(Math.random() * 4 + 1);
+          randomnumber();
           if (x == stonex) {
             stone.style.display = "block";
             coalore.style.display = "none";
@@ -541,10 +660,25 @@ toolbutton.onclick = () => {
   firstblock.style.display = "none";
   secondblock.style.display = "none";
   hits.style.display = "none";
+  lomitko.style.display = "none";
+  maxhits.style.display = "none";
   toolbutton.style.display = "none";
   change.style.display = "none";
 
   tools.style.left = "50%";
+
+  if (woodswordtool == 1 || localStorage.getItem("woodswordc") == 1) {
+    woodsword.style.display = "block";
+  }
+  if (stoneswordtool == 1 || localStorage.getItem("stoneswordc") == 1) {
+    stonesword.style.display = "block";
+  }
+  if (ironswordtool == 1 || localStorage.getItem("ironswordc") == 1) {
+    ironsword.style.display = "block";
+  }
+  if (diaswordtool == 1 || localStorage.getItem("diaswordc") == 1) {
+    diasword.style.display = "block";
+  }
 
   if (woodaxetool == 1 || localStorage.getItem("woodaxec") == 1) {
     woodaxe.style.display = "block";
@@ -558,6 +692,7 @@ toolbutton.onclick = () => {
   if (diaaxetool == 1 || localStorage.getItem("diaaxec") == 1) {
     diaaxe.style.display = "block";
   }
+
   if (woodpickaxetool == 1 || localStorage.getItem("woodpickaxec") == 1) {
     woodpickaxe.style.display = "block";
   }
@@ -576,6 +711,8 @@ toolclose.onclick = () => {
   firstblock.style.display = "block";
   secondblock.style.display = "flex";
   hits.style.display = "block";
+  lomitko.style.display = "block";
+  maxhits.style.display = "block";
   toolbutton.style.display = "block";
   change.style.display = "block";
 
@@ -586,6 +723,10 @@ toolclose.onclick = () => {
     stonepickaxe.style.display = "none";
     ironpickaxe.style.display = "none";
     diapickaxe.style.display = "none";
+    woodsword.style.display = "none";
+    stonesword.style.display = "none";
+    ironsword.style.display = "none";
+    diasword.style.display = "none";
     if (woodaxetool == 1 || localStorage.getItem("woodaxec") == 1) {
       woodaxe.style.display = "block";
     }
@@ -605,6 +746,10 @@ toolclose.onclick = () => {
     stoneaxe.style.display = "none";
     ironaxe.style.display = "none";
     diaaxe.style.display = "none";
+    woodsword.style.display = "none";
+    stonesword.style.display = "none";
+    ironsword.style.display = "none";
+    diasword.style.display = "none";
     if (woodpickaxetool == 1 || localStorage.getItem("woodpickaxec") == 1) {
       woodpickaxe.style.display = "block";
     }
@@ -623,6 +768,10 @@ toolclose.onclick = () => {
     stoneaxe.style.display = "none";
     ironaxe.style.display = "none";
     diaaxe.style.display = "none";
+    woodsword.style.display = "none";
+    stonesword.style.display = "none";
+    ironsword.style.display = "none";
+    diasword.style.display = "none";
     if (woodpickaxetool == 1 || localStorage.getItem("woodpickaxec") == 1) {
       woodpickaxe.style.display = "block";
     }
@@ -641,6 +790,10 @@ toolclose.onclick = () => {
     stoneaxe.style.display = "none";
     ironaxe.style.display = "none";
     diaaxe.style.display = "none";
+    woodsword.style.display = "none";
+    stonesword.style.display = "none";
+    ironsword.style.display = "none";
+    diasword.style.display = "none";
     if (woodpickaxetool == 1 || localStorage.getItem("woodpickaxec") == 1) {
       woodpickaxe.style.display = "block";
     }
@@ -659,6 +812,10 @@ toolclose.onclick = () => {
     stoneaxe.style.display = "none";
     ironaxe.style.display = "none";
     diaaxe.style.display = "none";
+    woodsword.style.display = "none";
+    stonesword.style.display = "none";
+    ironsword.style.display = "none";
+    diasword.style.display = "none";
     if (woodpickaxetool == 1 || localStorage.getItem("woodpickaxec") == 1) {
       woodpickaxe.style.display = "block";
     }
@@ -673,6 +830,29 @@ toolclose.onclick = () => {
     }
   }
 
+  if (player.style.display == "block") {
+    woodaxe.style.display = "none";
+    stoneaxe.style.display = "none";
+    ironaxe.style.display = "none";
+    diaaxe.style.display = "none";
+    woodpickaxe.style.display = "none";
+    stonepickaxe.style.display = "none";
+    ironpickaxe.style.display = "none";
+    diapickaxe.style.display = "none";
+    if (woodswordtool == 1 || localStorage.getItem("woodswordc") == 1) {
+      woodsword.style.display = "block";
+    }
+    if (stoneswordtool == 1 || localStorage.getItem("stoneswordc") == 1) {
+      stonesword.style.display = "block";
+    }
+    if (ironswordtool == 1 || localStorage.getItem("ironswordc") == 1) {
+      ironsword.style.display = "block";
+    }
+    if (diaswordtool == 1 || localStorage.getItem("diaswordc") == 1) {
+      diasword.style.display = "block";
+    }
+  }
+
   toolclose.style.display = "none";
 };
 //světy
@@ -680,8 +860,23 @@ change.onclick = () => {
   biome.style.display = "block";
   firstblock.style.display = "none";
   secondblock.style.display = "none";
+  clearInterval(enemydmg);
+  // pojistka proti pickování jiných blocku jinde
+  woodgone.style.display = "none";
+  stonegone.style.display = "none";
+  coalgone.style.display = "none";
+  irongone.style.display = "none";
+  diagone.style.display = "none";
+  command.style.display = "none";
   hits.style.display = "none";
+  lomitko.style.display = "none";
+  maxhits.style.display = "none";
+  hits.innerHTML = hp;
   //tools
+  woodsword.style.display = "none";
+  stonesword.style.display = "none";
+  ironsword.style.display = "none";
+  diasword.style.display = "none";
   woodpickaxe.style.display = "none";
   stonepickaxe.style.display = "none";
   ironpickaxe.style.display = "none";
@@ -702,16 +897,32 @@ overWorld.onclick = () => {
   ironore.style.display = "none";
   diaore.style.display = "none";
 
+  player.style.display = "none";
+  enemy.style.display = "none";
+  attack.style.display = "none";
+  startfight.style.display = "none";
+
+  hits.innerHTML = 25;
+  maxhits.innerHTML = 25;
+  playerhp.style.display = "none";
+  enemyhp.style.display = "none";
+
   if (hour >= 18 || hour <= 6) {
     header.style.backgroundImage =
       "url('https://wallpaperaccess.com/full/2984716.png')";
+    header.style.backgroundPosition = "bottom";
+    header.style.height = "450px";
   } else {
     header.style.backgroundImage =
       "url('https://cdn.wallpapersafari.com/93/96/oTLvsW.png')";
+    header.style.backgroundPosition = "bottom";
+    header.style.height = "450px";
   }
   secondblock.style.display = "flex";
 
   hits.style.display = "block";
+  lomitko.style.display = "block";
+  maxhits.style.display = "block";
   if (craftingtabletoolIF == 1 || localStorage.getItem("craftingc") == 1) {
     craftingtabletool.style.display = "block";
     if (furnacetoolIF == 1 || localStorage.getItem("furnacec") == 1) {
@@ -732,13 +943,14 @@ overWorld.onclick = () => {
       diaaxe.style.display = "block";
     }
   }
+  woodsword.style.display = "none";
+  stonesword.style.display = "none";
+  ironsword.style.display = "none";
+  diasword.style.display = "none";
   woodpickaxe.style.display = "none";
   stonepickaxe.style.display = "none";
   ironpickaxe.style.display = "none";
   diapickaxe.style.display = "none";
-
-  hp -= hp;
-  hp += 25;
 };
 cave.onclick = () => {
   biome.style.display = "none";
@@ -749,11 +961,25 @@ cave.onclick = () => {
   ironore.style.display = "none";
   diaore.style.display = "none";
 
+  player.style.display = "none";
+  enemy.style.display = "none";
+  attack.style.display = "none";
+  startfight.style.display = "none";
+
+  hits.innerHTML = 25;
+  maxhits.innerHTML = 25;
+
   header.style.backgroundImage = "url('https://i.redd.it/l0pagi2byg391.png')"; // snaha o změnu pozadí //(../img/cave.png)
+  header.style.backgroundPosition = "bottom";
+  header.style.height = "450px";
 
   secondblock.style.display = "flex";
 
   hits.style.display = "block";
+  lomitko.style.display = "block";
+  maxhits.style.display = "block";
+  playerhp.style.display = "none";
+  enemyhp.style.display = "none";
 
   if (craftingtabletoolIF == 1 || localStorage.getItem("craftingc") == 1) {
     craftingtabletool.style.display = "block";
@@ -821,9 +1047,69 @@ cave.onclick = () => {
   stoneaxe.style.display = "none";
   ironaxe.style.display = "none";
   diaaxe.style.display = "none";
+  woodsword.style.display = "none";
+  stonesword.style.display = "none";
+  ironsword.style.display = "none";
+  diasword.style.display = "none";
+};
+dungeon.onclick = () => {
+  biome.style.display = "none";
+  firstblock.style.display = "block";
+  secondblock.style.display = "flex";
+  wood.style.display = "none";
+  stone.style.display = "none";
+  coalore.style.display = "none";
+  ironore.style.display = "none";
+  diaore.style.display = "none";
 
-  hp -= hp;
-  hp += 25;
+  player.style.display = "block";
+  /*enemy.style.display = "block";*/
+  /*attack.style.display = "block";*/
+  startfight.style.display = "block";
+
+  header.style.backgroundImage =
+    "url(https://preview.redd.it/cfitznchjei61.png?width=3840&format=png&auto=webp&s=def486be2b8feaa12c02e483115056d7d4997247)";
+  header.style.backgroundPosition = "center";
+  header.style.height = "600px";
+
+  hits.style.display = "block";
+
+  lomitko.style.display = "block";
+  /*maxhits.style.display = "block";*/
+  hits.innerHTML = 20;
+  maxhits.innerHTML = 20;
+  playerhp.style.display = "block";
+  /*enemyhp.style.display = "block";*/
+
+  if (craftingtabletoolIF == 1 || localStorage.getItem("craftingc") == 1) {
+    craftingtabletool.style.display = "block";
+    if (furnacetoolIF == 1 || localStorage.getItem("furnacec") == 1) {
+      furnacetool.style.display = "block";
+    }
+  }
+  if (player.style.display == "block") {
+    if (woodswordtool == 1 || localStorage.getItem("woodswordc") == 1) {
+      woodsword.style.display = "block";
+    }
+    if (stoneswordtool == 1 || localStorage.getItem("stoneswordc") == 1) {
+      stonesword.style.display = "block";
+    }
+    if (ironswordtool == 1 || localStorage.getItem("ironswordc") == 1) {
+      ironsword.style.display = "block";
+    }
+    if (diaswordtool == 1 || localStorage.getItem("diaswordc") == 1) {
+      diasword.style.display = "block";
+    }
+  }
+
+  woodaxe.style.display = "none";
+  stoneaxe.style.display = "none";
+  ironaxe.style.display = "none";
+  diaaxe.style.display = "none";
+  woodpickaxe.style.display = "none";
+  stonepickaxe.style.display = "none";
+  ironpickaxe.style.display = "none";
+  diapickaxe.style.display = "none";
 };
 //inventar + crafting buttons
 
@@ -833,10 +1119,6 @@ craftplank.onclick = () => {
     //upravit pak save system
     craftingplank += 4;
     localStorage.setItem("plankc", craftingplank);
-    /*craftingplank ++;
-    craftingplank ++;
-    craftingplank ++;
-    craftingplank ++;*/
     plank.innerHTML = `${craftingplank}`;
     woodznicen -= 1;
     localStorage.setItem("woodc", woodznicen);
@@ -848,10 +1130,6 @@ craftstick.onclick = () => {
     //upravit pak save system
     craftingstick += 4;
     localStorage.setItem("stickc", craftingstick);
-    /*craftingstick ++;
-    craftingstick ++;
-    craftingstick ++;
-    craftingstick ++;*/
     stick.innerHTML = `${craftingstick}`;
     craftingplank -= 2;
     localStorage.setItem("plankc", craftingplank);
@@ -1073,7 +1351,96 @@ craftdiapickaxe.onclick = () => {
         diapickaxe.style.display = "block";
       }
       craftdiapickaxe.style.display = "none";
+    }
+  }
+};
+//swords
+craftwoodsword.onclick = () => {
+  if (craftingtabletoolIF == 1 || localStorage.getItem("craftingc") == 1) {
+    if (craftingplank >= 2 && craftingstick >= 1) {
+      craftingstick -= 1;
+      localStorage.setItem("stickc", craftingstick);
+      stick.innerHTML = `${craftingstick}`;
+      craftingplank -= 2;
+      localStorage.setItem("plankc", craftingplank);
+      plank.innerHTML = `${craftingplank}`;
+      woodswordtool += 1;
+      localStorage.setItem("woodswordc", woodswordtool);
+      if (stoneswordtool != 1) {
+        /*attack.style.cursor = "url(https://ani.cursors-4u.net/games/gam-16/gam1556.cur), auto !important";*/
+        sword = 4;
+      }
+      localStorage.setItem("swordcd", sword);
+      if (player.style.display == "block") {
+        woodsword.style.display = "block";
+      }
+      craftwoodsword.style.display = "none";
+    }
+  }
+};
+craftstonesword.onclick = () => {
+  if (craftingtabletoolIF == 1 || localStorage.getItem("craftingc") == 1) {
+    if (stoneznicen >= 2 && craftingstick >= 1) {
+      craftingstick -= 1;
+      localStorage.setItem("stickc", craftingstick);
+      stick.innerHTML = `${craftingstick}`;
+      stoneznicen -= 2;
+      localStorage.setItem("stonec", stoneznicen);
+      stonedest.innerHTML = `${stoneznicen}`;
+      stoneswordtool += 1;
+      localStorage.setItem("stoneswordc", stoneswordtool);
+      if (ironswordtool != 1) {
+        sword = 5;
+      }
+      localStorage.setItem("swordcd", sword);
+      if (player.style.display == "block") {
+        stonesword.style.display = "block";
+      }
+      craftstonesword.style.display = "none";
       //toolpickaxes.style.display="block";
+    }
+  }
+};
+craftironsword.onclick = () => {
+  if (craftingtabletoolIF == 1 || localStorage.getItem("craftingc") == 1) {
+    if (craftingironingot >= 2 && craftingstick >= 1) {
+      craftingstick -= 1;
+      localStorage.setItem("stickc", craftingstick);
+      stick.innerHTML = `${craftingstick}`;
+      craftingironingot -= 2;
+      localStorage.setItem("ironingotc", craftingironingot);
+      ironingot.innerHTML = `${craftingironingot}`;
+      ironswordtool += 1;
+      localStorage.setItem("ironswordc", ironswordtool);
+      if (diaswordtool != 1) {
+        sword = 6;
+      }
+      localStorage.setItem("swordcd", sword);
+      if (player.style.display == "block") {
+        ironsword.style.display = "block";
+      }
+      craftironsword.style.display = "none";
+      //toolpickaxes.style.display="block";
+    }
+  }
+};
+craftdiasword.onclick = () => {
+  if (craftingtabletoolIF == 1 || localStorage.getItem("craftingc") == 1) {
+    if (diaznicen >= 2 && craftingstick >= 1) {
+      craftingstick -= 1;
+      localStorage.setItem("stickc", craftingstick);
+      stick.innerHTML = `${craftingstick}`;
+      diaznicen -= 2;
+      localStorage.setItem("diac", diaznicen);
+      diadest.innerHTML = `${diaznicen}`;
+      diaswordtool += 1;
+      localStorage.setItem("diaswordc", diaswordtool);
+      sword = 7;
+      localStorage.setItem("swordcd", sword);
+      if (player.style.display == "block") {
+        diasword.style.display = "block";
+      }
+      craftdiasword.style.display = "none";
     }
   }
 };

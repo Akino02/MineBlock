@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./res/css/style.css" />
-    <link rel="icon" type="logo.ico" href="./res/img/logo.ico">
+    <link rel="icon" type="logo.ico" href="./res/img/logo.ico" />
     <title>MineBlock</title>
   </head>
   <body>
@@ -15,38 +15,134 @@
       <ul>
         <li id="play">Play</li>
         <li id="settingb">Setting</li>
-        <li><a href="https://github.com/PabloMikes/Projekt-na-grafice" >Koral's Quest</a></li>
+        <li>
+          <a href="https://github.com/PabloMikes/Projekt-na-grafice"
+            >Koral's Quest</a
+          >
+        </li>
       </ul>
-      <div class="by"><a href="https://github.com/Akino02">By: Michal Adámek</a></div>
+      <div class="by">
+        <a href="https://github.com/Akino02">By: Michal Adámek</a>
+      </div>
     </div>
     <div id="game">
-    <header id="header">
-      <div id="buttons">
-        <div id="change">=</div>
-        <div class="multi">
-          <img
-            src="./res/img/multitool.png"
-            alt="multitool.png"
-            id="toolbutton"
-          />
+      <header id="header">
+        <div id="buttons">
+          <div id="change">=</div>
+          <div class="multi">
+            <img
+              src="./res/img/multitool.png"
+              alt="multitool.png"
+              id="toolbutton"
+            />
+          </div>
+          <div id="toolclose">X</div>
         </div>
-        <div id="toolclose">X</div>
-      </div>
-      <div id="biome">
-        <h2>MineBlock</h2>
-        <h3>Biomes</h3>
-        <div id="overWorld">OverWorld</div>
-        <div id="cave">Cave</div>
-        <div id="nether">Dungeon</div>
-        <div id="end">End</div>
-      </div>
-      <div id="toolsbutton">
+        <div id="biome">
+          <h2>MineBlock</h2>
+          <h3>Biomes</h3>
+          <div id="overWorld">OverWorld</div>
+          <div id="cave">Cave</div>
+          <div id="dungeon">Dungeon</div>
+          <div id="end">End</div>
+        </div>
+        <div id="toolsbutton">
+          <div id="tools">
+            <div id="toolswords">
+              <img
+                src="./res/img/woodsword.png"
+                alt="woodsword"
+                id="woodsword"
+              />
+              <img
+                src="./res/img/stonesword.png"
+                alt="stonesword"
+                id="stonesword"
+              />
+              <img
+                src="./res/img/ironsword.png"
+                alt="ironsword"
+                id="ironsword"
+              />
+              <img src="./res/img/diasword.png" alt="diasword" id="diasword" />
+            </div>
+            <div id="toolaxes">
+              <img src="./res/img/woodaxe.png" alt="woodaxe" id="woodaxe" />
+              <img src="./res/img/stoneaxe.png" alt="stoneaxe" id="stoneaxe" />
+              <img src="./res/img/ironaxe.png" alt="ironaxe" id="ironaxe" />
+              <img src="./res/img/diaaxe.png" alt="diaaxe" id="diaaxe" />
+            </div>
+            <div id="toolpickaxes">
+              <img
+                src="./res/img/woodpickaxe.png"
+                alt="woodpickaxe"
+                id="woodpickaxe"
+              />
+              <img
+                src="./res/img/stonepickaxe.png"
+                alt="stonepickaxe"
+                id="stonepickaxe"
+              />
+              <img
+                src="./res/img/ironpickaxe.png"
+                alt="ironpickaxe"
+                id="ironpickaxe"
+              />
+              <img
+                src="./res/img/diapickaxe.png"
+                alt="diapickaxe"
+                id="diapickaxe"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="firstblock">
+          <div class="name">MineBlock</div>
+          <img src="./res/img/Wood.png" alt="Wood.png" id="wood" />
+          <img src="./res/img/Stone.png" alt="Stone.png" id="stone" />
+          <img src="./res/img/coalore.png" alt="Coalore.png" id="coalore" />
+          <img src="./res/img/ironore.png" alt="Ironore.png" id="ironore" />
+          <img src="./res/img/diaore.png" alt="diaore.png" id="diaore" />
+
+          <div id="containerfight">
+            <img src="./res/img/player.png" alt="player.png" id="player" />
+            <img src="./res/img/zombie.png" alt="enemy.png" id="enemy" />
+          </div>
+        </div>
+        <div id="secondblock">
+          <div id="command">Pick</div>
+          <img src="./res/img/Woodgone2.png" alt="Woodgone.png" id="woodgone" />
+          <img
+            src="./res/img/Cobblegone2.png"
+            alt="Cobblegone.png"
+            id="stonegone"
+          />
+          <img src="./res/img/coal.png" alt="coalgone.png" id="coalgone" />
+          <img
+            src="./res/img/ironoregone.png"
+            alt="irongone.png"
+            id="irongone"
+          />
+          <img src="./res/img/dia.png" alt="diagone.png" id="diagone" />
+          <button id="attack">Attack</button>
+          <button id="startfight">Fight</button>
+        </div>
         <div id="tools">
+          <div id="toolswords">
+            <img src="./res/img/woodsword.png" alt="woodsword" id="woodsword" />
+            <img
+              src="./res/img/stonesword.png"
+              alt="stonesword"
+              id="stonesword"
+            />
+            <img src="./res/img/ironsword.png" alt="ironsword" id="ironsword" />
+            <img src="./res/img/diasword.png" alt="diasword" id="diasword" />
+          </div>
           <div id="toolaxes">
             <img src="./res/img/woodaxe.png" alt="woodaxe" id="woodaxe" />
             <img src="./res/img/stoneaxe.png" alt="stoneaxe" id="stoneaxe" />
-            <img src="./res/img/ironaxe.png" alt="ironaxe" id="ironaxe">
-            <img src="./res/img/diaaxe.png" alt="diaaxe" id="diaaxe">
+            <img src="./res/img/ironaxe.png" alt="ironaxe" id="ironaxe" />
+            <img src="./res/img/diaaxe.png" alt="diaaxe" id="diaaxe" />
           </div>
           <div id="toolpickaxes">
             <img
@@ -71,228 +167,229 @@
             />
           </div>
         </div>
-      </div>
-      <div id="firstblock">
-        <div class="name">MineBlock</div>
-        <img src="./res/img/Wood.png" alt="Wood.png" id="wood" />
-        <img src="./res/img/Stone.png" alt="Stone.png" id="stone" />
-        <img src="./res/img/coalore.png" alt="Coalore.png" id="coalore" />
-        <img src="./res/img/ironore.png" alt="Ironore.png" id="ironore" />
-        <img src="./res/img/diaore.png" alt="diaore.png" id="diaore" />
-      </div>
-      <div id="secondblock">
-        <div id="command">Pick</div>
-        <img src="./res/img/Woodgone2.png" alt="Woodgone.png" id="woodgone" />
-        <img
-          src="./res/img/Cobblegone2.png"
-          alt="Cobblegone.png"
-          id="stonegone"
-        />
-        <img src="./res/img/coal.png" alt="coalgone.png" id="coalgone" />
-        <img src="./res/img/ironoregone.png" alt="irongone.png" id="irongone" />
-        <img src="./res/img/dia.png" alt="diagone.png" id="diagone" />
-      </div>
-      <div id="tools">
-        <div id="toolaxes">
-          <img src="./res/img/woodaxe.png" alt="woodaxe" id="woodaxe" />
-          <img src="./res/img/stoneaxe.png" alt="stoneaxe" id="stoneaxe" />
-          <img src="./res/img/ironaxe.png" alt="ironaxe" id="ironaxe" />
-          <img src="./res/img/diaaxe.png" alt="diaaxe" id="diaaxe" />
-        </div>
-        <div id="toolpickaxes">
+        <div id="tables">
           <img
-            src="./res/img/woodpickaxe.png"
-            alt="woodpickaxe"
-            id="woodpickaxe"
+            src="./res/img/craftingtable.png"
+            alt="craftingtable.png"
+            id="craftingtabletool"
           />
-          <img
-            src="./res/img/stonepickaxe.png"
-            alt="stonepickaxe"
-            id="stonepickaxe"
-          />
-          <img src="./res/img/ironpickaxe.png" alt="ironpickaxe" id="ironpickaxe">
-          <img src="./res/img/diapickaxe.png" alt="diapickaxe" id="diapickaxe">
+          <img src="./res/img/furnace.png" alt="furnace.png" id="furnacetool" />
         </div>
-      </div>
-      <div id="tables">
-        <img
-          src="./res/img/craftingtable.png"
-          alt="craftingtable.png"
-          id="craftingtabletool"
-        />
-        <img src="./res/img/furnace.png" alt="furnace.png" id="furnacetool" />
-      </div>
-    </header>
-    <div class="names">
-      <div id="bname">
-        Inventory<img
-          src="./res/img/backpack.png"
-          alt="Backpack.png"
-          id="backpack"
-        />
-      </div>
-      <div id="hps">
-        (
-        <div id="hits">25/25</div>
-        )
-      </div>
-      <div id="cname">
-        <img
-          src="./res/img/craftingtable.png"
-          alt="Craftingtable.png"
-          id="craftingtable"
-        />Crafting
-      </div>
-    </div>
-    <div id="counter"></div>
-    <div class="backpack">
-      <div id="inventar">
-        <div class="row">
-          <div class="col">
-            <img src="./res/img/Woodgone2.png" alt="Woodgone" id="pickedwood" />
-            <div id="wooddest">0</div>
-          </div>
-          <div class="col">
-            <img src="./res/img/Plank.png" alt="Plank" id="craftedplank" />
-            <div id="plank">0</div>
-          </div>
-          <div class="col">
-            <img src="./res/img/Stick.png" alt="Stick" id="craftedstick" />
-            <div id="stick">0</div>
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/Cobblegone2.png"
-              alt="Cobblegone"
-              id="pickedstone"
+      </header>
+      <div class="names">
+        <div id="bname">
+          <div id="bn">
+            <div class="bnmobile">Inventory</div><img
+              src="./res/img/backpack.png"
+              alt="Backpack.png"
+              id="backpack"
             />
-            <div id="stonedest">0</div>
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/coal.png"
-              alt="coaloregone.png"
-              id="pickedcoal"
-            />
-            <div id="coaldest">0</div>
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/ironoregone.png"
-              alt="ironoregone.png"
-              id="pickediron"
-            />
-            <div id="irondest">0</div>
-            </div>
-            <div class="col">
-            <img
-              src="./res/img/ironingot.png"
-              alt="ironingot.png"
-              id="craftedironingot"
-            />
-            <div id="ironingot">0</div>
-          </div>
-            <div class="col">
-            <img
-              src="./res/img/dia.png"
-              alt="dia.png"
-              id="pickeddia"
-            />
-            <div id="diadest">0</div>
           </div>
         </div>
-        <div id="bclose">X</div>
-      </div>
-      <div id="crafting">
-        <div class="row">
-          <div class="col">
-            <img src="./res/img/Plank.png" alt="plank.png" id="craftplank" />
-          </div>
-          <div class="col">
-            <img src="./res/img/Stick.png" alt="stick.png" id="craftstick" />
-          </div>
-          <div class="col">
+        <img
+          src="./res/img/playerhp.png"
+          alt="playerhp.png"
+          id="playerhp"
+        />
+        <div id="hps">
+          (
+          <div id="hits">25</div>
+          <div id="lomitko">/</div>
+          <div id="maxhits">25</div>
+          )
+        </div>
+        <img
+          src="./res/img/zombiehead.jpg"
+          alt="playerhp.png"
+          id="enemyhp"
+        />
+        <div id="cname">
+          <div id="cn">
             <img
               src="./res/img/craftingtable.png"
-              alt="craftingtable.png"
-              id="craftcraftingtable"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/furnace.png"
-              alt="furnace.png"
-              id="craftfurnace"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/woodaxe.png"
-              alt="woodaxe.png"
-              id="craftwoodaxe"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/woodpickaxe.png"
-              alt="woodpickaxe.png"
-              id="craftwoodpickaxe"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/stoneaxe.png"
-              alt="stoneaxe.png"
-              id="craftstoneaxe"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/stonepickaxe.png"
-              alt="stonepickaxe.png"
-              id="craftstonepickaxe"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/ironingot.png"
-              alt="ironaxe.png"
-              id="craftironingot"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/ironaxe.png"
-              alt="ironaxe.png"
-              id="craftironaxe"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/ironpickaxe.png"
-              alt="ironpickaxe.png"
-              id="craftironpickaxe"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/diaaxe.png"
-              alt="ironpickaxe.png"
-              id="craftdiaaxe"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="./res/img/diapickaxe.png"
-              alt="ironpickaxe.png"
-              id="craftdiapickaxe"
-            />
+              alt="Craftingtable.png"
+              id="craftingtable"
+            /><div class="cnmobile">Crafting</div>
           </div>
         </div>
-        <div id="cclose">X</div>
       </div>
+      <div id="counter"></div>
+      <div class="backpack">
+        <div id="inventar">
+          <div class="row">
+            <div class="col">
+              <img
+                src="./res/img/Woodgone2.png"
+                alt="Woodgone"
+                id="pickedwood"
+              />
+              <div id="wooddest">0</div>
+            </div>
+            <div class="col">
+              <img src="./res/img/Plank.png" alt="Plank" id="craftedplank" />
+              <div id="plank">0</div>
+            </div>
+            <div class="col">
+              <img src="./res/img/Stick.png" alt="Stick" id="craftedstick" />
+              <div id="stick">0</div>
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/Cobblegone2.png"
+                alt="Cobblegone"
+                id="pickedstone"
+              />
+              <div id="stonedest">0</div>
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/coal.png"
+                alt="coaloregone.png"
+                id="pickedcoal"
+              />
+              <div id="coaldest">0</div>
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/ironoregone.png"
+                alt="ironoregone.png"
+                id="pickediron"
+              />
+              <div id="irondest">0</div>
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/ironingot.png"
+                alt="ironingot.png"
+                id="craftedironingot"
+              />
+              <div id="ironingot">0</div>
+            </div>
+            <div class="col">
+              <img src="./res/img/dia.png" alt="dia.png" id="pickeddia" />
+              <div id="diadest">0</div>
+            </div>
+          </div>
+          <div id="bclose">X</div>
+        </div>
+        <div id="crafting">
+          <div class="row">
+            <div class="col">
+              <img src="./res/img/Plank.png" alt="plank.png" id="craftplank" />
+            </div>
+            <div class="col">
+              <img src="./res/img/Stick.png" alt="stick.png" id="craftstick" />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/craftingtable.png"
+                alt="craftingtable.png"
+                id="craftcraftingtable"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/furnace.png"
+                alt="furnace.png"
+                id="craftfurnace"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/woodsword.png"
+                alt="woodsword.png"
+                id="craftwoodsword"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/woodaxe.png"
+                alt="woodaxe.png"
+                id="craftwoodaxe"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/woodpickaxe.png"
+                alt="woodpickaxe.png"
+                id="craftwoodpickaxe"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/stonesword.png"
+                alt="stonesword.png"
+                id="craftstonesword"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/stoneaxe.png"
+                alt="stoneaxe.png"
+                id="craftstoneaxe"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/stonepickaxe.png"
+                alt="stonepickaxe.png"
+                id="craftstonepickaxe"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/ironingot.png"
+                alt="ironaxe.png"
+                id="craftironingot"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/ironsword.png"
+                alt="ironsword.png"
+                id="craftironsword"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/ironaxe.png"
+                alt="ironaxe.png"
+                id="craftironaxe"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/ironpickaxe.png"
+                alt="ironpickaxe.png"
+                id="craftironpickaxe"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/diasword.png"
+                alt="diasword.png"
+                id="craftdiasword"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/diaaxe.png"
+                alt="ironpickaxe.png"
+                id="craftdiaaxe"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="./res/img/diapickaxe.png"
+                alt="ironpickaxe.png"
+                id="craftdiapickaxe"
+              />
+            </div>
+          </div>
+          <div id="cclose">X</div>
+        </div>
+      </div>
+      <script src="./res/js/main.js"></script>
     </div>
-    <script src="./res/js/main.js"></script>
-  </div>
   </body>
 </html>
