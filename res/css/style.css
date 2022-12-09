@@ -8,29 +8,29 @@ body {
   background-image: url(../img/menubackground.png);
   background-size: cover;
 }
-#setting{
+#setting {
   font-size: 35px;
   width: 100%;
   text-align: center;
   display: none;
   color: white;
 }
-#menuofgame{
+#menuofgame {
   width: 100%;
   text-align: center;
   color: white;
 }
-.namegame{
+.namegame {
   font-size: 30px;
 }
-ul{
+ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
   width: 10%;
   margin: 0 auto;
 }
-li{
+li {
   margin-top: 20px;
   padding: 10px;
   text-decoration: none;
@@ -38,17 +38,17 @@ li{
   font-size: 20px;
   cursor: pointer;
 }
-a{
+a {
   color: white;
   text-decoration: none;
 }
-.by{
+.by {
   position: absolute;
   bottom: 0px;
   width: 100%;
   text-align: center;
 }
-#game{
+#game {
   display: none;
 }
 #buttons {
@@ -102,7 +102,8 @@ a{
   cursor: pointer;
   margin-bottom: 15px;
 }
-#nether {
+#dungeon {
+  cursor: pointer;
   margin-bottom: 15px;
 }
 #end {
@@ -124,6 +125,30 @@ a{
 .name {
   text-decoration: underline;
 }
+#player{
+  max-width: 200px;
+  max-height: 250px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: none;
+}
+#enemy{
+  display: none;
+  margin: 0 auto;
+}
+#zombie, #skeleton, #spider, #enderman, #pillager{
+  max-width: 250px;
+  max-height: 250px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: none;
+}
+#containerfight{
+  display: flex;
+  justify-content: space-between;
+}
 #wood {
   max-width: 250px;
   width: 100%;
@@ -132,7 +157,7 @@ a{
   display: block;
   cursor: crosshair;
 }
-#stone {
+#stone, #coalore, #ironore, #diaore{
   max-width: 250px;
   width: 100%;
   /*width: 250px;*/
@@ -140,62 +165,42 @@ a{
   display: none;
   cursor: crosshair;
 }
-#coalore {
-  max-width: 250px;
+#attack{
+  max-width: 100px;
+  max-height: 50px;
   width: 100%;
-  width: 250px;
-  margin: 0 auto;
+  height: 100%;
+  margin-left: 35%;
   display: none;
-  cursor: crosshair;
+  cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;
 }
-#ironore {
-  max-width: 250px;
+#startfight{
+  max-width: 100px;
+  max-height: 50px;
   width: 100%;
-  width: 250px;
-  margin: 0 auto;
+  height: 100%;
+  margin-left: 35%;
   display: none;
-  cursor: crosshair;
+  cursor: pointer;
 }
-#diaore{
-  max-width: 250px;
+/*#backpackdead{
+  max-width: 100px;
   width: 100%;
-  width: 250px;
-  margin: 0 auto;
+  margin-left: 15%;
   display: none;
-  cursor: crosshair;
-}
-#woodgone {
+  cursor: pointer;
+}*/
+#woodgone, #stonegone, #coalgone, #irongone, #diagone{
   max-width: 100px;
   width: 100%;
   margin-left: 15%;
   display: none;
   cursor: pointer;
 }
-#stonegone {
+#backpackdead{
   max-width: 100px;
   width: 100%;
-  margin-left: 15%;
-  display: none;
-  cursor: pointer;
-}
-#coalgone {
-  max-width: 100px;
-  width: 100%;
-  margin-left: 15%;
-  display: none;
-  cursor: pointer;
-}
-#irongone {
-  max-width: 100px;
-  width: 100%;
-  margin-left: 15%;
-  display: none;
-  cursor: pointer;
-}
-#diagone{
-  max-width: 100px;
-  width: 100%;
-  margin-left: 15%;
+  margin-left: 35%;
   display: none;
   cursor: pointer;
 }
@@ -215,8 +220,17 @@ a{
   text-align: center;
   font-size: 25px;
 }
+#lomitko {
+  text-align: center;
+  font-size: 25px;
+}
+#maxhits {
+  text-align: center;
+  font-size: 25px;
+}
 #firstblock {
   height: 70%;
+  display: block;
 }
 #secondblock {
   height: 22%;
@@ -259,6 +273,38 @@ a{
   width: 100%;*/
   display: flex;
 }
+#toolswords {
+  display: flex;
+  flex-direction: column;
+}
+#woodsword {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  display: none;
+}
+#stonesword {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  display: none;
+}
+#ironsword {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  display: none;
+}
+#diasword {
+  max-width: 50px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  display: none;
+}
 #toolaxes {
   display: flex;
   flex-direction: column;
@@ -277,14 +323,14 @@ a{
   height: 100%;
   display: none;
 }
-#ironaxe{
+#ironaxe {
   max-width: 50px;
   width: 100%;
   max-height: 50px;
   height: 100%;
   display: none;
 }
-#diaaxe{
+#diaaxe {
   max-width: 50px;
   width: 100%;
   max-height: 50px;
@@ -309,14 +355,14 @@ a{
   height: 100%;
   display: none;
 }
-#ironpickaxe{
+#ironpickaxe {
   max-width: 50px;
   width: 100%;
   max-height: 50px;
   height: 100%;
   display: none;
 }
-#diapickaxe{
+#diapickaxe {
   max-width: 50px;
   width: 100%;
   max-height: 50px;
@@ -328,16 +374,58 @@ a{
   display: none;
 }
 .names {
+  width: 100%;
   display: flex;
   font-size: 25px;
   border-bottom: 1px solid black;
 }
 
-/*backpack + Inventář + crafting*/
+/*backpack + Inventář + crafting + playerhp*/
+#playerhp{
+  max-width: 25px;
+  max-height: 25px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+/*enemies hp*/
+#enemyhp{
+  display: none;
+}
+#zombiehp, #skeletonhp, #spiderhp, #endermanhp, #pillagerhp{
+  max-width: 25px;
+  max-height: 25px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#enddragon{
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#endphase{
+  position: absolute;
+  display: none;
+  top: 30%;
+  left: 40%;
+  text-align: center;
+}
 #bname {
+  width: 45%;
   display: flex;
   font-size: 25px;
+  /*cursor: pointer;*/
+}
+#bn{
   cursor: pointer;
+  display: flex;
+}
+.bnmobile{
+  display: block;
 }
 #bclose {
   float: right;
@@ -363,9 +451,18 @@ a{
   height: 100%;
 }
 #cname {
+  width: 45%;
   display: flex;
   font-size: 25px;
+  /*cursor: pointer;*/
+  justify-content: end;
+}
+#cn{
   cursor: pointer;
+  display: flex;
+}
+.cnmobile{
+  display: block;
 }
 #cclose {
   float: right;
@@ -438,7 +535,7 @@ a{
   width: 100%;
   margin-right: 20px;
 }
-#craftedironingot{
+#craftedironingot {
   float: left;
   max-width: 40px;
   width: 100%;
@@ -470,7 +567,7 @@ a{
   border-right: 3px solid grey;
   border-bottom: 3px solid grey;
 }
-#diadest{
+#diadest {
   font-size: 25px;
   text-align: center;
   border-right: 3px solid grey;
@@ -488,7 +585,7 @@ a{
   border-right: 3px solid grey;
   border-bottom: 3px solid grey;
 }
-#ironingot{
+#ironingot {
   font-size: 25px;
   text-align: center;
   border-right: 3px solid grey;
@@ -512,7 +609,7 @@ a{
   padding: 0px 20px 20px 0px;
   cursor: pointer;
 }
-#craftironingot{
+#craftironingot {
   float: left;
   max-width: 70px;
   width: 100%;
@@ -536,6 +633,40 @@ a{
   padding: 0px 20px 20px 0px;
   cursor: pointer;
 }
+/*swords*/
+#craftwoodsword {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  cursor: pointer;
+}
+#craftstonesword {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  cursor: pointer;
+}
+#craftironsword {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  cursor: pointer;
+}
+#craftdiasword {
+  float: left;
+  max-width: 70px;
+  width: 100%;
+  border-right: 1px solid black;
+  padding: 0px 20px 20px 0px;
+  cursor: pointer;
+}
+/*axes*/
 #craftwoodaxe {
   float: left;
   max-width: 70px;
@@ -552,7 +683,7 @@ a{
   padding: 0px 20px 20px 0px;
   cursor: pointer;
 }
-#craftironaxe{
+#craftironaxe {
   float: left;
   max-width: 70px;
   width: 100%;
@@ -560,7 +691,7 @@ a{
   padding: 0px 20px 20px 0px;
   cursor: pointer;
 }
-#craftdiaaxe{
+#craftdiaaxe {
   float: left;
   max-width: 70px;
   width: 100%;
@@ -568,6 +699,7 @@ a{
   padding: 0px 20px 20px 0px;
   cursor: pointer;
 }
+/*pickaxes*/
 #craftwoodpickaxe {
   float: left;
   max-width: 70px;
@@ -584,7 +716,7 @@ a{
   padding: 0px 20px 20px 0px;
   cursor: pointer;
 }
-#craftironpickaxe{
+#craftironpickaxe {
   float: left;
   max-width: 70px;
   width: 100%;
@@ -592,13 +724,63 @@ a{
   padding: 0px 20px 20px 0px;
   cursor: pointer;
 }
-#craftdiapickaxe{
+#craftdiapickaxe {
   float: left;
   max-width: 70px;
   width: 100%;
   border-right: 1px solid black;
   padding: 0px 20px 20px 0px;
   cursor: pointer;
+}
+@media only screen and (max-width: 2560px){
+  #endphase{
+    left: 39.2%;
+  }
+}
+@media only screen and (max-width: 1920px){
+  #endphase{
+    left: 41%;
+  }
+}
+@media only screen and (max-width: 1280px){
+  #endphase{
+    left: 29%;
+  }
+}
+@media only screen and (max-width: 540px){
+  #endphase{
+    left: 0%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  #player{
+    margin-top: 50px;
+    max-width: 150px;
+    max-height: 200px;
+  }
+  #enemy{
+    margin-top: 50px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .bnmobile{
+    display: none;
+  }
+  .cnmobile{
+    display: none;
+  }
+  #player{
+    margin-top: 100px;
+    max-width: 100px;
+    max-height: 150px;
+  }
+  #enemy{
+    margin-top: 100px;
+    max-width: 150px;
+    max-height: 150px;
+  }
 }
 @media only screen and (max-width: 385px) {
   #craftingtabletool {
