@@ -265,6 +265,12 @@ function dragondmgg() {
   }, 10000);
 }
 
+let zombiey = 1;
+let skeletony = 2;
+let spidery = 3;
+let endermany = 4;
+let pilligery = 5;
+
 let woodswordtool = 0;
 let stoneswordtool = 0;
 let ironswordtool = 0;
