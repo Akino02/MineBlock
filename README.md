@@ -1,6 +1,10 @@
 # MineBlock
 [Play](https://akino02.github.io/MineBlock/)
 #
+<h2>Update 1.9</h2>
+<p>End of the game</p>
+<p>Dungeon repaired</p>
+<p>Craftinglist: swords</p>
 <h2>Update 1.8</h2>
 <p>Save system</p>
 <p>Craftinglist: diaaxe,diapickaxe</p>

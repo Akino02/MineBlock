@@ -94,19 +94,8 @@ a {
   width: 100%;
   margin: 0 auto;
 }
-#overWorld {
+#overWorld, #cave, #dungeon, #end {
   cursor: pointer;
-  margin-bottom: 15px;
-}
-#cave {
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-#dungeon {
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-#end {
   margin-bottom: 15px;
 }
 #header {
@@ -752,34 +741,9 @@ a {
     left: 0%;
   }
 }
-@media only screen and (max-width: 650px) {
-  #player{
-    margin-top: 50px;
-    max-width: 150px;
-    max-height: 200px;
-  }
-  #enemy{
-    margin-top: 50px;
-    max-width: 200px;
-    max-height: 200px;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .bnmobile{
-    display: none;
-  }
-  .cnmobile{
-    display: none;
-  }
-  #player{
-    margin-top: 100px;
-    max-width: 100px;
-    max-height: 150px;
-  }
-  #enemy{
-    margin-top: 100px;
-    max-width: 150px;
-    max-height: 150px;
+@media only screen and (max-width: 540px){
+  #endphase{
+    left: 0%;
   }
 }
 @media only screen and (max-width: 385px) {
@@ -787,7 +751,7 @@ a {
     margin-right: 200px;
   }
   #tools {
-    /*tohle špatně funguje*/
+    /*chyba*/
     position: absolute;
     top: 7%;
     left: 0%;
