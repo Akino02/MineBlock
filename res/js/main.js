@@ -126,20 +126,31 @@ let furnacetoolIF = 0;
 
 // tady se ukládá náhodná proměná na proměnu bloků a později i mobů
 let x = 0;
-const randomnumber = () => {
+function randomnumber() {
   if (localStorage.getItem("woodpickaxec") == 1) {
     x = Math.floor(Math.random() * 2 + 1);
   }
-  if (localStorage.getItem("stonepickaxec") == 1) {
+  else if (localStorage.getItem("stonepickaxec") == 1) {
     x = Math.floor(Math.random() * 3 + 1);
   }
-  if (localStorage.getItem("ironpickaxec") == 1) {
+  else if (localStorage.getItem("ironpickaxec") == 1) {
     x = Math.floor(Math.random() * 4 + 1);
   }
-  /*else{
-  x = Math.floor(Math.random() * 2 + 1);
-}*/
 };
+let y = 0;
+function randomnumberenemy() {
+  //zombie,skeleton,spider,enderman,pilliger asi udělat na meče aby se tam nespawnul někdo OP;
+    //y = Math.floor(Math.random() * 5 + 1); zakladní
+    if (localStorage.getItem("woodswordc") == 1) {
+      y = Math.floor(Math.random() * 3 + 1);
+    }
+    else if (localStorage.getItem("stoneswordc") == 1) {
+      y = Math.floor(Math.random() * 4 + 1);
+    }
+    else if (localStorage.getItem("ironswordc") == 1) {
+      y = Math.floor(Math.random() * 5 + 1);
+    }
+}
 
 //damage od enemy
 let zdmg = 3;
@@ -164,6 +175,12 @@ let coalx = 2;
 let ironx = 3;
 let goldx = 5;
 let diax = 4;
+
+let zombiey = 1;
+let skeletony = 2;
+let spidery = 3;
+let endermany = 4;
+let pilligery = 5;
 
 let woodswordtool = 0;
 let stoneswordtool = 0;

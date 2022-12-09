@@ -782,7 +782,6 @@ a {
     margin-right: 200px;
   }
   #tools {
-    /*tohle špatně funguje*/
     position: absolute;
     top: 7%;
     left: 0%;
