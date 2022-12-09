@@ -1398,7 +1398,6 @@ end.onclick = () => {
   dragondmgg();
 };
 //inventar + crafting buttons
-
 //craftig
 craftplank.onclick = () => {
   if (woodznicen >= 1) {
