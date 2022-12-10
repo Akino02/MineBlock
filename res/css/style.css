@@ -94,7 +94,10 @@ a {
   width: 100%;
   margin: 0 auto;
 }
-#overWorld, #cave, #dungeon, #end {
+#overWorld,
+#cave,
+#dungeon,
+#end {
   cursor: pointer;
   margin-bottom: 15px;
 }
@@ -114,7 +117,7 @@ a {
 .name {
   text-decoration: underline;
 }
-#player{
+#player {
   max-width: 200px;
   max-height: 250px;
   width: 100%;
@@ -122,11 +125,15 @@ a {
   margin: 0 auto;
   display: none;
 }
-#enemy{
+#enemy {
   display: none;
   margin: 0 auto;
 }
-#zombie, #skeleton, #spider, #enderman, #pillager{
+#zombie,
+#skeleton,
+#spider,
+#enderman,
+#pillager {
   max-width: 250px;
   max-height: 250px;
   width: 100%;
@@ -134,7 +141,7 @@ a {
   margin: 0 auto;
   display: none;
 }
-#containerfight{
+#containerfight {
   display: flex;
   justify-content: space-between;
 }
@@ -146,7 +153,10 @@ a {
   display: block;
   cursor: crosshair;
 }
-#stone, #coalore, #ironore, #diaore{
+#stone,
+#coalore,
+#ironore,
+#diaore {
   max-width: 250px;
   width: 100%;
   /*width: 250px;*/
@@ -154,7 +164,7 @@ a {
   display: none;
   cursor: crosshair;
 }
-#attack{
+#attack {
   max-width: 100px;
   max-height: 50px;
   width: 100%;
@@ -163,7 +173,7 @@ a {
   display: none;
   cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo15.cur), auto !important;
 }
-#startfight{
+#startfight {
   max-width: 100px;
   max-height: 50px;
   width: 100%;
@@ -179,14 +189,18 @@ a {
   display: none;
   cursor: pointer;
 }*/
-#woodgone, #stonegone, #coalgone, #irongone, #diagone{
+#woodgone,
+#stonegone,
+#coalgone,
+#irongone,
+#diagone {
   max-width: 100px;
   width: 100%;
   margin-left: 15%;
   display: none;
   cursor: pointer;
 }
-#backpackdead{
+#backpackdead {
   max-width: 100px;
   width: 100%;
   margin-left: 35%;
@@ -370,7 +384,7 @@ a {
 }
 
 /*backpack + Inventář + crafting + playerhp*/
-#playerhp{
+#playerhp {
   max-width: 25px;
   max-height: 25px;
   width: 100%;
@@ -378,17 +392,21 @@ a {
   display: none;
 }
 /*enemies hp*/
-#enemyhp{
+#enemyhp {
   display: none;
 }
-#zombiehp, #skeletonhp, #spiderhp, #endermanhp, #pillagerhp{
+#zombiehp,
+#skeletonhp,
+#spiderhp,
+#endermanhp,
+#pillagerhp {
   max-width: 25px;
   max-height: 25px;
   width: 100%;
   height: 100%;
   display: none;
 }
-#enddragon{
+#enddragon {
   max-width: 400px;
   max-height: 400px;
   margin: 0 auto;
@@ -396,7 +414,7 @@ a {
   height: 100%;
   display: none;
 }
-#endphase{
+#endphase {
   position: absolute;
   display: none;
   top: 30%;
@@ -409,11 +427,11 @@ a {
   font-size: 25px;
   /*cursor: pointer;*/
 }
-#bn{
+#bn {
   cursor: pointer;
   display: flex;
 }
-.bnmobile{
+.bnmobile {
   display: block;
 }
 #bclose {
@@ -446,11 +464,11 @@ a {
   /*cursor: pointer;*/
   justify-content: end;
 }
-#cn{
+#cn {
   cursor: pointer;
   display: flex;
 }
-.cnmobile{
+.cnmobile {
   display: block;
 }
 #cclose {
@@ -721,28 +739,28 @@ a {
   padding: 0px 20px 20px 0px;
   cursor: pointer;
 }
-@media only screen and (max-width: 2560px){
-  #endphase{
+@media only screen and (max-width: 2560px) {
+  #endphase {
     left: 39.2%;
   }
 }
-@media only screen and (max-width: 1920px){
-  #endphase{
+@media only screen and (max-width: 1920px) {
+  #endphase {
     left: 41%;
   }
 }
-@media only screen and (max-width: 1280px){
-  #endphase{
+@media only screen and (max-width: 1280px) {
+  #endphase {
     left: 29%;
   }
 }
-@media only screen and (max-width: 540px){
-  #endphase{
+@media only screen and (max-width: 540px) {
+  #endphase {
     left: 0%;
   }
 }
-@media only screen and (max-width: 540px){
-  #endphase{
+@media only screen and (max-width: 540px) {
+  #endphase {
     left: 0%;
   }
 }
