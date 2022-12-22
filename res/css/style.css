@@ -30,6 +30,10 @@ ul {
   width: 10%;
   margin: 0 auto;
 }
+.menutabs{
+  background-color: rgb(117, 117, 117);
+  border: 1.5px solid black;
+}
 li {
   margin-top: 20px;
   padding: 10px;
