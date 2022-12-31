@@ -17,11 +17,11 @@ body {
 }
 #menuofgame {
   width: 100%;
-  text-align: center;
   color: white;
 }
 .namegame {
   font-size: 30px;
+  width: 150px;
 }
 ul {
   margin: 0;
@@ -29,10 +29,12 @@ ul {
   list-style-type: none;
   width: 10%;
   margin: 0 auto;
+  text-align: center;
 }
-.menutabs{
+.menutabs {
   background-color: rgb(117, 117, 117);
   border: 1.5px solid black;
+  width: 150px;
 }
 li {
   margin-top: 20px;
@@ -758,6 +760,21 @@ a {
     left: 29%;
   }
 }
+/*@media only screen and (max-width: 900px) {
+  .menutabs {
+    margin-left: -25px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .menutabs {
+    margin-left: -30px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .menutabs {
+    margin-left: -50px;
+  }
+}*/
 @media only screen and (max-width: 540px) {
   #endphase {
     left: 0%;
